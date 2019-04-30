@@ -25,6 +25,10 @@
 	</div>
 	
 	<div id="cadre">
+		<div id="img_article">
+			<img src="Images/Menu/logo.png" width="140" height="140"/></a>  
+		</div>
+
 		<form action="ajouter.php" method="post">
 	        <table id="infos">
 		        <tr>
@@ -33,12 +37,8 @@
 			    </tr>
 	        	<tr>
 	                <td>Description de l'article: </td>
-	                <td ><input id="description" type="text" name="description"></td>
-	            </tr>
-	            <tr>
-	                <td>Sexe: </td>
-	                <td><input type="radio" value="Femme"/>Femme</td>
-			      	<td><input type="radio" value="Homme"/>Homme</td>
+	                <td ><textarea name="description" id="description"></textarea></td>
+
 	            </tr>
 	            <tr>
 	                <td>Catégorie: </td>
@@ -57,16 +57,26 @@
 	                <td>
 	                	<select name="sous_cat" type="text" >
 					        <option value="sous_cat">
-					        <option value="Vetements">Vêtments</option>
-					        <option value="Sports">Sports et loisirs</option>
-					        <option value="Livres">Livres</option>
-					        <option value="Music">Musique</option>
+					        <option value="hauts">Hauts</option>
+					        <option value="bas">Bas</option>
+					        <option value="chaussures">Chaussures</option>
+					        <option value="vet_sportifs">Vêtements sportifs</option>
+					        <option value="elec">Eletroniques</option>
+					        <option value="access">Accessoires</option>
 					    </select>
 					</td>
 	            </tr>
 	            <tr>
-	                <td>Taille: </td>
+	                <td>Sexe: </td>
+	                <td><input type="checkbox" value="Femme" name="sexe"/>Femme</td>
+			      	<td><input type="checkbox" value="Homme" name="sexe"/>Homme</td>
+	            </tr>
+	            <tr>
+	                <td>Nombre de tailles disponibles: </td>
 	                <td><input type="text" name="taille"></td>
+	            </tr>
+	            <tr>
+	                <td colspan="2"><input type="submit" value="Valider l'article" id="article_ok"></td>
 	            </tr>
 	        </table>
 	    </form>
