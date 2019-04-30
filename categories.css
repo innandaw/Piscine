@@ -42,7 +42,7 @@
 
 #bouton       
 { 
-	background-image: url("Images/barreRecherche.png");
+	background-image: url("Images/Menu/barreRecherche.png");
 	background-position: center;
 	box-shadow: none;
 	width:50px; 
