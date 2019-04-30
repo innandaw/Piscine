@@ -1,0 +1,122 @@
+#infos td
+{
+	font-family: 'Yantramanav', sans-serif;
+	font-size: 17pt;
+	margin : 30%;
+}
+
+#infos #description
+{
+
+	margin-top: 100px;
+	height: 200px;
+	width : 400px; ;
+}
+
+#cadre 
+{
+	margin: auto;
+	margin-top: 20px;
+	padding-left: 35%;
+	padding-top: 100px;
+	padding-bottom: 120px;
+	border : solid;
+	border-color: #3495DE;
+}
+
+#header
+{
+	padding: 5px;
+	background-color: black;    
+	color: white;
+	height: 80px;
+}
+
+#logo 
+{ 
+	float: left;  
+	margin-left:40px;
+	margin-top:10px;
+}
+
+#barre h1
+{
+	font-family: 'Great Vibes', cursive;
+	float: left;
+	color: #3495DE;
+	margin-left:27%;
+	font-size:40px;
+}
+
+#logoCompte
+{ 
+	float: left; 
+	margin-left: 500px;
+	margin-top: 20px;
+}
+
+
+#menu
+{
+	background-color: #3495DE;
+	height: 35px;
+}
+
+#cat
+{
+	margin-left: 30px;
+	margin-top: 5px;
+}
+
+
+h1
+{
+	font-family: 'Great Vibes', cursive;
+}
+
+#titre
+{
+	margin-left:40%;
+	font-size:50px;
+	color: #3495DE;
+}
+
+
+
+
+
+#footer
+{
+	margin-top:30px;
+	background-color: black;
+	color: #3495DE;
+	height:200px;
+}
+
+p 
+{
+	font-family: 'Yantramanav', sans-serif;
+	font-size: 16pt;
+}
+
+a
+{
+	color: #3495DE;
+}
+
+#col1, #col2, #col3, #col4
+{	
+	float: left;
+	margin-right: 80px;
+	margin-left: 80px;
+	font-family: 'Yantramanav', sans-serif;
+}
+
+#ligne
+{
+	float: right;
+	margin-left: 20px;
+	font-size: 12pt;
+	font-family: 'Yantramanav', sans-serif;
+	margin-top: 110px;
+}

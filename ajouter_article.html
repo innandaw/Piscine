@@ -1,0 +1,115 @@
+<!DOCTYPE html> 
+<head> 
+	<title>ECE Amazon</title> 
+	<meta charset="utf-8" /> 
+	<link href="articles.css" rel="stylesheet" type="text/css"/> 
+	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+	
+
+</head> 
+ 
+<body>
+	<div id="header">
+		<div id="logo">
+			<a href="mainPage.html"><img src="Images/Menu/logo.png" id="Logo" width="140" height="60"/></a>  
+		</div>
+		    
+        <div id="barre">
+            <h1>Fiche Produit</h1>  
+        </div> 
+
+		<div id="logoCompte">
+			<a href="creerclient.html"><img src="Images/Menu/compte.png" width="50" height="40"/></a>   
+		</div>
+	</div>
+	
+	<div id="cadre">
+		<form action="ajouter.php" method="post">
+	        <table id="infos">
+		        <tr>
+			       <td>Nom de l'article: </td>
+	               <td><input type="text" name="nom"></td>
+			    </tr>
+	        	<tr>
+	                <td>Description de l'article: </td>
+	                <td ><input id="description" type="text" name="description"></td>
+	            </tr>
+	            <tr>
+	                <td>Sexe: </td>
+	                <td><input type="radio" value="Femme"/>Femme</td>
+			      	<td><input type="radio" value="Homme"/>Homme</td>
+	            </tr>
+	            <tr>
+	                <td>Catégorie: </td>
+	                <td>
+	                	<select name="categorie" type="text" >
+					        <option value="Catégorie">
+					        <option value="Vetements">Vêtments</option>
+					        <option value="Sports">Sports et loisirs</option>
+					        <option value="Livres">Livres</option>
+					        <option value="Music">Musique</option>
+					    </select>
+					</td>
+	            </tr>
+	            <tr>
+	                <td>Sous-catégorie: </td>
+	                <td>
+	                	<select name="sous_cat" type="text" >
+					        <option value="sous_cat">
+					        <option value="Vetements">Vêtments</option>
+					        <option value="Sports">Sports et loisirs</option>
+					        <option value="Livres">Livres</option>
+					        <option value="Music">Musique</option>
+					    </select>
+					</td>
+	            </tr>
+	            <tr>
+	                <td>Taille: </td>
+	                <td><input type="text" name="taille"></td>
+	            </tr>
+	        </table>
+	    </form>
+	</div>
+
+
+
+
+	
+
+	<div id="footer">
+		<div id="col1">
+			<p>Pour mieux nous connaitre</p>
+		 	<a href="apropos.html">A propos d'ECE Amazon</a><br/>
+		 	<a href="ECE.html">ECE Amazon et notre planète</a><br/>
+		 	<a href="Equipe.html">Notre équipe</a>
+		</div>
+
+		<div id="col2">
+		 	<p>Catégories</p>
+		 	<a href="catvetements.html">Vêtements</a><br/>
+		 	<a href="catsport.html">Sport et loisirs</a><br/>
+		 	<a href="catbook.html">Livres</a><br/>
+		 	<a href="catmusic.html">Musique</a>
+	 	</div>
+
+	 	<div id="col3">
+		 	<p>Besoins d'aide?</p>
+		 	<a href="commandes.html">Voir ou suivre vos commandes</a><br/>
+		 	<a href="livraison.html">Tarif et option de livraison</a><br/>
+		 	<a href="prime.html">Amazon Prime</a><br/>
+		 	<a href="retours.html">Retours</a>
+	 	</div>
+
+		<div id="col4">
+	 		<p>FAQ</p>
+	 	</div>
+
+	 	<div id="ligne">
+	 		<a href="contact.html">Contact</a>
+	 		<a href="mention.html">Mentions légales</a>
+	 	</div>
+	</div>	
+	
+</body> 
+</html> 
