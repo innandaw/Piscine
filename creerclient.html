@@ -1,3 +1,9 @@
+<?php
+// On démarre la session AVANT d'écrire du code HTML
+session_start();
+
+?>
+
 <!DOCTYPE html> 
 <head> 
 	<title>ECE Amazon</title> 
@@ -11,7 +17,7 @@
 <body>
 	<div id="header">
 		<div id="logo">
-			<a href="mainPage.html"><img src="Images/Menu/logo.png" id="Logo" width="140" height="60"/></a>  
+			<a href="mainPage.php"><img src="Images/Menu/logo.png" id="Logo" width="140" height="60"/></a>  
 		</div>
 		    
         <form id="barre">
@@ -39,17 +45,13 @@
 		<h1>Compte du client</h1>
 		<p>
 			Vous avez déjà un compte?<br/>
-		    <a href="compte.html">Connectez-vous !</a>
+		    <a href="connecte.html">Connectez-vous !</a>
 		</p>
 
 		<h2>Créer votre compte</h2>
 		<form action="compte.php" method="post">
 	        <table id="column1">
 	        	<h3>Informations générales</h3>
-		        <tr>
-			      <td><input type="radio" value="Acheteur" />Acheteur</td>
-			      <td><input type="radio" value="Vendeur" />Vendeur</td>
-			    </tr>
 	        	<tr>
 	                <td>Prénom: </td>
 	                <td><input type="text" name="firstName"></td>
@@ -71,7 +73,7 @@
 	                <td><input type="text" name="password"></td>
 	            </tr>
 	        </table>
-	        <br>
+	        <br><br>
 
 	        <table id="column2">    
 	            <h3>Domicile</h3>
@@ -102,14 +104,7 @@
 	        	<h3>Information de paiement</h3>
 	        	<tr>
 	                <td>Type de carte de paiement: </td>
-	                <td><select name="cardType" type="text">
-				      <option value="Type de carte">
-				      <option value="Visa">Visa</option>
-				      <option value="CB">Carte Bleu</option>
-				      <option value="Mastercard">Mastercard</option>
-				      <option value="AE">American Express</option>
-					 </select>
-					</td>
+	                <td><input type="text" name="cardType"></td>
 	            </tr>
 	            <tr>
 	                <td>Numéro de la carte: </td>

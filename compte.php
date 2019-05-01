@@ -20,24 +20,29 @@
 	$dateExp=isset($_POST["expDate"])?$_POST["expDate"]:"";
 	$cvv=isset($_POST["vvc"])?$_POST["vvc"]:"";
 	
+	
 	$dbh=mysqli_connect($server, $user_name, $password,$database);
 	if($dbh) {echo "Connection to the Server opened";}
 	
-	$sql = "INSERT INTO personnes VALUES('$nom', '$prenom', '$dateNais', '$mail','$mdp','$adresse','$ville','$CP', '$pays','$tel','$typeCarte','$numCarte','$nomCarte','$dateExp','$cvv');";
+	$sql = "INSERT INTO personnes VALUES('$nom','$prenom','$dateNais','$mail','$mdp','$adresse','$ville','$CP', '$pays','$tel','$typeCarte','$numCarte','$nomCarte','$dateExp','$cvv',true);";
 	//$sql = "INSERT INTO personnes (nom,prenom,mail,mdp,adresse,ville,CP,pays,tel,type_carte,numero_carte,nom_carte,cvv) VALUES('$nom', '$prenom', '$mail','$mdp','$adresse','$ville','$CP', '$pays','$tel','$typeCarte','$numCarte','$nomCarte','$cvv');";
 
 	$result = mysqli_query($dbh,$sql);
 
 	if (!$result) 
 	{
-	   echo "Impossible de creer votre compte";
-	   exit;
+		
+	    exit;
 	}
 	else
 	{
+		include 'connexionReussie.html';
+		
 		echo "Creation reussie";
 	}
-		
+	
+	mysqli_free_result($result);
+
 
 	$dbh = null;
 ?>
