@@ -25,13 +25,15 @@
 	</div>
 	
 	<div id="cadre">
-		<div id="img_article">
-			<img src="Images/Menu/logo.png" width="140" height="140"/></a>
-			<input type="file" name="img_article"/><br />  
-		</div>
-
-		<form action="ajouter.php" method="post">
+		<form action="ajouter.php" method="post" action="" enctype="multipart/form-data">
+					
 	        <table id="infos">
+
+	        	<tr>
+	        		<div id="img_article">
+						<input type="file" name="fichier_upload" id="fichier_upload"><br>
+					</div>
+				</tr>
 		        <tr>
 			       <td>Nom de l'article: </td>
 	               <td><input type="text" name="nom"></td>
@@ -49,7 +51,7 @@
 					        <option value="Vetements">Vêtments</option>
 					        <option value="Sports">Sports et loisirs</option>
 					        <option value="Livres">Livres</option>
-					        <option value="Music">Musique</option>
+					        <option value="Musique">Musique</option>
 					    </select>
 					</td>
 	            </tr>
@@ -69,8 +71,8 @@
 	            </tr>
 	            <tr>
 	                <td>Sexe: </td>
-	                <td><input type="checkbox" value="Femme" name="sexe"/>Femme</td>
-			      	<td><input type="checkbox" value="Homme" name="sexe"/>Homme</td>
+	                <td><input type="radio" value="Femme" name="sexe"/>Femme</td>
+			      	<td><input type="radio" value="Homme" name="sexe"/>Homme</td>
 	            </tr>
 	            <tr>
 	                <td>Nombre de tailles disponibles: </td>
