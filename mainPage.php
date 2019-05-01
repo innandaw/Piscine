@@ -43,7 +43,6 @@
 		var $logoCompte = $('#logoCompte');
 		var $imgConn = $('#logoCompte img');
 		
-		alert('<?php echo $conn; ?>');
 		if('<?php echo $conn; ?>'==0)
 		{		
 			var $currentImgConn = $imgConn.eq(0); //image courante
@@ -119,14 +118,14 @@
 			}
 			slideImg();
 		});
-		</script>
-		<script type="text/javascript" src="main.js"></script>
+	</script>
+	<script type="text/javascript" src="main.js"></script>
 </head> 
  
 <body>
 	<div id="header">
 		<div id="logo">
-			<a href="mainPage.html"><img src="Images/Menu/logo.png" width="140" height="60"/></a>  
+			<a href="mainPage.php"><img src="Images/Menu/logo.png" width="140" height="60"/></a>  
 		</div>
 		    
         <form id="barre">
@@ -140,8 +139,8 @@
 		
 		<div id="logoCompte">
 			<ul>
-				<li><a href="creerclient.html"><img src="Images/Menu/compte.png" width="50" height="40"/></a></li>
-				<li><a href="creerclient.html"><img src="Images/Menu/compteConn.png" width="50" height="40"/></a></li>
+				<li><a href="creerclient.html"><img src="Images/Menu/compte.png" width="50" height="40"/></a></li>   			 <!--creerclient.html-->
+				<li><a href="monCompteAch.php"><img src="Images/Menu/compteConn.png" width="50" height="40"/></a></li>
 			</ul>
 		</div>
 		
@@ -150,7 +149,7 @@
 		
 	</div>
 	<div id="menu">
-		<a href="categories.html"><img src="Images/Menu/categories.png" width="140" height="25" id="cat"/></a>
+		<a href="categories.php"><img src="Images/Menu/categories.png" width="140" height="25" id="cat"/></a>
 		<img src="Images/Menu/admin.png" width="140" height="25" id="admin"/>
 		<img src="Images/Menu/ventesFlash.png" width="140" height="25" id="ventesFlash"/>
 		<img src="Images/Menu/vendre.png" width="140" height="25" id="vendre"/>
@@ -175,9 +174,9 @@
 	
 	<div>
 		<a href="catvetements.html"><img src="Images/catvetements.jpg" type="bouton" id="cat1"/></a>
-		<a href="sportcat.html"><img src="Images/sportcat.png" type="bouton" id="cat2"/></a>
-		<a href="bookcat.html"><img src="Images/bookcat.jpg" type="bouton" id="cat3"/></a>
-		<a href="musiccat.html"><img src="Images/musiccat.jpg" type="bouton" id="cat4"/></a>
+		<a href="catsport.html"><img src="Images/sportcat.png" type="bouton" id="cat2"/></a>
+		<a href="catlivres.html"><img src="Images/bookcat.jpg" type="bouton" id="cat3"/></a>
+		<a href="catmusique.html"><img src="Images/musiccat.jpg" type="bouton" id="cat4"/></a>
 	</div>
 
 	<div id="footer">
@@ -192,8 +191,8 @@
 		 	<p>Catégories</p>
 		 	<a href="catvetements.html">Vêtements</a><br/>
 		 	<a href="catsport.html">Sport et loisirs</a><br/>
-		 	<a href="catbook.html">Livres</a><br/>
-		 	<a href="catmusic.html">Musique</a>
+		 	<a href="catlivres.html">Livres</a><br/>
+		 	<a href="catmusique.html">Musique</a>
 	 	</div>
 
 	 	<div id="col3">
