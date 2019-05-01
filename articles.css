@@ -1,3 +1,40 @@
+/*#infos_details h1
+{
+	float : left;
+}*/
+
+#infos_details1
+{
+	margin-top: 80px;
+	float : left;
+	margin-left: 50px;
+	margin-right: 30px;
+}
+
+#infos_details2
+{
+	margin-top: 80px;
+	float : left;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+#infos_details3
+{
+	margin-top: 80px;
+	float : left;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
+#infos_details4
+{
+	margin-top: 50px;
+	float : left;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+
 #infos td
 {
 	font-family: 'Yantramanav', sans-serif;
@@ -28,6 +65,7 @@
 	padding-bottom: 50px;
 	border : solid;
 	border-color: #3495DE;
+	height: 400px;
 }
 
 #infos #article_ok
