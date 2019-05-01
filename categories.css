@@ -20,17 +20,17 @@
 	margin-top:15px;
 }
 
-#logoPannier
+#logopanier
 { 
 	float: left; 
-	margin-left: 265px;
+	margin-left: 260px;
 	margin-top: 13px;
 }
 
 #logoCompte ul li
 { 
 	float: left; 
-	margin-left: 1135px;
+	margin-left: 1125px;
 	margin-top: 1px;
 	position: absolute;
 	list-style: none;
@@ -94,15 +94,9 @@ h1
 
 #titre
 {
-	margin-left:42%;
+	margin-left:40%;
 	font-size:50px;
 	color: #3495DE;
-}
-
-#admin, #ventesFlash, #vendre
-{
-	margin-left: 200px;
-	margin-top: 5px;
 }
 
 #t1, #t2

@@ -17,21 +17,43 @@
 {
 	float: left;
 	margin-left:270px;
-	margin-top:25px;
+	margin-top:15px;
 }
 
-#logoPannier
+#logopanier
 { 
 	float: left; 
-	margin-left: 300px;
-	margin-top: 20px;
+	margin-left: 260px;
+	margin-top: 13px;
 }
 
-#logoCompte
+#logoCompte ul li
 { 
 	float: left; 
-	margin-left: 10px;
-	margin-top: 20px;
+	margin-left: 1125px;
+	margin-top: 1px;
+	position: absolute;
+	list-style: none;
+}
+
+#pann
+{
+	float: left;
+	font-family: Calibri;
+	font-size: 17px;
+	margin-left: 870px;
+	margin-top: 1px;
+	color:#3495DE;
+}
+
+#conn
+{
+	float: left;
+	font-family: Calibri;
+	font-size: 17px;
+	margin-left: 20px;
+	margin-top: 1px;
+	color:#3495DE;
 }
 
 #champ       
@@ -58,23 +80,25 @@
 #cat
 {
 	margin-left: 30px;
-	margin-top: 5px;
 }
 
 #admin, #ventesFlash, #vendre
 {
 	margin-left: 200px;
-	margin-top: 5px;
 }
 
 h1
 {
-	color: #3495DE;
-	font-size:50px;
 	font-family: 'Great Vibes', cursive;
-	margin-left: 400px;
-	margin-top:40px;
 }
+
+#titre
+{
+	margin-left:43%;
+	font-size:50px;
+	color: #3495DE;
+}
+
 
 #photo
 {
@@ -115,7 +139,7 @@ h1
 {
 	float:left;
 	padding-left:20px;
-	margin-left: 600px;
+	margin-left: 300px;
 	margin-top: 20px;
 	width:400px;
 	border-width: 3px;
@@ -143,6 +167,22 @@ h1
 p
 {
 	margin-left: 440px;
+}
+
+#decon
+{
+	float:left;
+	margin-left: 185px;
+	margin-top: 45px;
+}
+
+#deconnecte
+{
+	background-color: red;
+	color: white;
+	width: 200px;
+	text-align: center;
+	font-size:20px;
 }
 
 #footer

@@ -23,6 +23,21 @@
 	
 	$dbh=mysqli_connect($server, $user_name, $password,$database);
 	
+	$sql = "SELECT connexion FROM personnes WHERE connexion=1";
+	
+	$result = mysqli_query($dbh,$sql);
+	
+	$row = mysqli_fetch_assoc($result);
+	
+	if($row["connexion"]==0)
+	{
+		$conn=0;
+	}
+	else
+	{
+		$conn=1;
+	}
+	
 	$sql = "SELECT * FROM personnes WHERE connexion=1";
 
 	$result = mysqli_query($dbh,$sql);
@@ -74,6 +89,28 @@
 
 	<meta charset="utf-8" /> 
 	<link href="modifierAch.css" rel="stylesheet" type="text/css"/> 
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var $indexImgConn = 0;
+			var $logoCompte = $('#logoCompte');
+			var $imgConn = $('#logoCompte img');
+			
+			if('<?php echo $conn; ?>'==0)
+			{		
+				var $currentImgConn = $imgConn.eq(0); //image courante
+				$imgConn.css('display', 'none');
+				$currentImgConn.css('display', 'block');
+			}
+			else
+			{
+				var $currentImgConn = $imgConn.eq(1); //image courante
+				$imgConn.css('display', 'none');
+				$currentImgConn.css('display', 'block');
+			}
+		});
+	</script>
 </head> 
  
 <body>
@@ -87,20 +124,26 @@
             <input id="bouton" type="button"/>   
         </form> 
 		
-		<div id="logoPannier">
-			<img src="Images/Menu/pannier.png" width="50" height="40"/>   
+		<div id="logopanier">
+			<img src="Images/Menu/panier.png" width="50" height="40"/>   
 		</div>
 		
 		<div id="logoCompte">
-			<a href="creerclient.html"><img src="Images/Menu/compteConn.png" width="50" height="40"/></a>   
+			<ul>
+				<li><a href="creerclient.php"><img src="Images/Menu/compte.png" width="50" height="40"/></a></li>   
+				<li><a href="monCompteAch.php"><img src="Images/Menu/compteConn.png" width="50" height="40"/></a></li>
+			</ul>
 		</div>
+		
+		<h1 id="pann">Mon panier</h1>
+		<a href="creerclient.php"><h1 id="conn">Connexion</h1></a>		
 		
 	</div>
 	<div id="menu">
 		<a href="categories.php"><img src="Images/Menu/categories.png" width="140" height="25" id="cat"/></a>
 		<img src="Images/Menu/admin.png" width="140" height="25" id="admin"/>
 		<img src="Images/Menu/ventesFlash.png" width="140" height="25" id="ventesFlash"/>
-		<img src="Images/Menu/vendre.png" width="140" height="25" id="vendre"/>
+		<a href="ajouter_article.php"><img src="Images/Menu/vendre.png" width="140" height="25" id="vendre"/></a>
 	</div>
 
 	<form action="modifCompteAch.php" method="post">
@@ -184,10 +227,10 @@
 
 		<div id="col2">
 		 	<p>Catégories</p>
-		 	<a href="catvetements.html">Vêtements</a><br/>
-		 	<a href="catsport.html">Sport et loisirs</a><br/>
-		 	<a href="catlivres.html">Livres</a><br/>
-		 	<a href="catmusique.html">Musique</a>
+		 	<a href="catvetements.php">Vêtements</a><br/>
+		 	<a href="catsport.php">Sport et loisirs</a><br/>
+		 	<a href="catlivres.php">Livres</a><br/>
+		 	<a href="catmusique.php">Musique</a>
 	 	</div>
 
 	 	<div id="col3">

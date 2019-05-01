@@ -8,7 +8,6 @@
 	$mdp=isset($_POST["mdp"])?$_POST["mdp"]:"";
 	
 	$dbh=mysqli_connect($server, $user_name, $password,$database);
-	if($dbh) {echo "Connection to the Server opened";}
 	
 	$sql = "SELECT COUNT(*) FROM personnes WHERE mail='$mail' AND mdp='$mdp';";
 	//$sql = "INSERT INTO personnes (nom,prenom,mail,mdp,adresse,ville,CP,pays,tel,type_carte,numero_carte,nom_carte,cvv) VALUES('$nom', '$prenom', '$mail','$mdp','$adresse','$ville','$CP', '$pays','$tel','$typeCarte','$numCarte','$nomCarte','$cvv');";
@@ -20,7 +19,7 @@
 	
 	if ($row["COUNT(*)"]==0) 
 	{
-		include 'connecte.html';
+		include 'connecte.php';
 		
 	    exit;
 	}
@@ -30,12 +29,8 @@
 	
 		$result = mysqli_query($dbh,$sql);
 	
-		include 'connexionReussie.html';
-		
-		echo "Creation reussie";
+		include 'connexionReussie.php';
 	}
-	
-	mysqli_free_result($result);
 
 	$dbh = null;
 ?>

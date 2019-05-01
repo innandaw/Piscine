@@ -61,12 +61,12 @@ $cvv="000";
 			<a href="mainPage.php"><img src="Images/Menu/logo.png" id="Logo" width="140" height="60"/></a>  
 		</div>
 		
-		<div id="logoPannier">
-			<img src="Images/Menu/pannier.png" width="50" height="40"/>   
+		<div id="logopanier">
+			<img src="Images/Menu/panier.png" width="50" height="40"/>   
 		</div>
 		
 		<div id="logoCompte">
-			<a href="creerclient.html"><img src="Images/Menu/compteConn.png" width="50" height="40"/></a>   
+			<a href="creerclient.php"><img src="Images/Menu/compteConn.png" width="50" height="40"/></a>   
 		</div>
 		
 	</div>
@@ -146,10 +146,10 @@ $cvv="000";
 
 		<div id="col2">
 		 	<p>Catégories</p>
-		 	<a href="catvetements.html">Vêtements</a><br/>
-		 	<a href="catsport.html">Sport et loisirs</a><br/>
-		 	<a href="catlivres.html">Livres</a><br/>
-		 	<a href="catmusique.html">Musique</a>
+		 	<a href="catvetements.php">Vêtements</a><br/>
+		 	<a href="catsport.php">Sport et loisirs</a><br/>
+		 	<a href="catlivres.php">Livres</a><br/>
+		 	<a href="catmusique.php">Musique</a>
 	 	</div>
 
 	 	<div id="col3">
