@@ -1,0 +1,223 @@
+#header
+{
+	padding: 5px;
+	background-color: black;    
+	color: white;
+	height: 80px;
+}
+
+#logo 
+{ 
+	float: left;  
+	margin-left:40px;
+	margin-top:10px;
+}
+
+#barre
+{
+	float: left;
+	margin-left:270px;
+	margin-top:15px;
+}
+
+#logopanier
+{ 
+	float: left; 
+	margin-left: 260px;
+	margin-top: 13px;
+}
+
+#logoCompte ul li
+{ 
+	float: left; 
+	margin-left: 1125px;
+	margin-top: 1px;
+	position: absolute;
+	list-style: none;
+}
+
+#pann
+{
+	float: left;
+	font-family: Calibri;
+	font-size: 17px;
+	margin-left: 870px;
+	margin-top: 1px;
+	color:#3495DE;
+}
+
+#conn
+{
+	float: left;
+	font-family: Calibri;
+	font-size: 17px;
+	margin-left: 20px;
+	margin-top: 1px;
+	color:#3495DE;
+}
+
+#champ       
+{
+	width:300px; 
+	height:30px;
+}
+
+#bouton       
+{ 
+	background-image: url("Images/Menu/barreRecherche.png");
+	background-position: center;
+	box-shadow: none;
+	width:50px; 
+	height:33px;
+}
+
+#menu
+{
+	background-color: #3495DE;
+	height: 35px;
+}
+
+#cat
+{
+	margin-left: 30px;
+}
+
+#admin, #ventesFlash, #vendre
+{
+	margin-left: 200px;
+}
+
+h1
+{
+	font-family: 'Great Vibes', cursive;
+}
+
+#titre
+{
+	margin-left:43%;
+	font-size:50px;
+	color: #3495DE;
+}
+
+
+#photo
+{
+	float: left;
+	margin-left: 90px;
+	margin-top: 30px;
+}
+
+#infosBase
+{
+	float: left;
+	margin-left: 160px;
+	margin-top: 10px;
+
+}
+
+#pay1
+{
+	float:left;
+	margin-left: 40px;
+	margin-top: 20px;
+}
+
+#c1, #c2, #c3
+{
+	margin-left:20px;
+	margin-right: 20px;
+}
+
+#pay2
+{
+	float: left;
+	margin-left: 70px;
+	margin-top: 5px;
+}
+
+#modif
+{
+	float:left;
+	padding-left:20px;
+	margin-left: 300px;
+	margin-top: 20px;
+	width:400px;
+	border-width: 3px;
+	border-color: red;
+	border-style:solid;
+}
+
+#contenu
+{
+	float: left;
+	color: black;
+}
+
+#cray
+{
+	float: left;
+	margin-left:70px;
+	margin-top:12px;
+}
+
+.infos
+{
+	color:grey;
+}
+
+p
+{
+	margin-left: 440px;
+}
+
+#decon
+{
+	float:left;
+	margin-left: 185px;
+	margin-top: 45px;
+}
+
+#deconnecte
+{
+	background-color: red;
+	color: white;
+	width: 200px;
+	text-align: center;
+	font-size:20px;
+}
+
+#footer
+{
+	margin-top:600px;
+	background-color: black;
+	color: #3495DE;
+	height:200px;
+}
+
+p 
+{
+	font-family: 'Yantramanav', sans-serif;
+	font-size: 16pt;
+}
+
+a
+{
+	color: #3495DE;
+}
+
+#col1, #col2, #col3, #col4
+{	
+	float: left;
+	margin-right: 80px;
+	margin-left: 80px;
+	font-family: 'Yantramanav', sans-serif;
+}
+
+#ligne
+{
+	float: right;
+	margin-left: 20px;
+	font-size: 12pt;
+	font-family: 'Yantramanav', sans-serif;
+	margin-top: 110px;
+}
