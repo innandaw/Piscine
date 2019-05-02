@@ -60,13 +60,7 @@
 		});
 	</script>
 	<script type="text/javascript" src="main.js"></script>
-	
-	<script>
-	  function myFunction(id) {
-	  	document.getElementById("demo").innerHTML = "YOU CLICKED ME!";
 
-	  	}
-	</script>
 
 </head> 
  
@@ -149,7 +143,7 @@
 				</div>
 				<div id="droite">
 					<h2 class="infos3">'.$prix.' €</h2>
-					<p id="demo" onclick="myFunction('.$id.')"><img src="Images/panier.png" width="70" height="70" class="infos3"/></p>
+					<a href="ajouterPanier.php?ident='.$id.'"><img src="Images/panier.png" width="70" height="70" class="infos3"/></a>
 						
 
 					<h2 id="infos5">Ajouter à mon panier</h2>
