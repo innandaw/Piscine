@@ -28,10 +28,8 @@
 	$stock4=isset($_POST["stock4"])?$_POST["stock4"]:"";
 
 	$dbh=mysqli_connect($server, $user_name, $password, $database);
-	if($dbh) {echo "Connection to the Server opened";}
 
 	$nom = $_SESSION["nom"];
-	echo $nom;
 /*
 	$nom = $_SESSION["j"];
 	echo $j;*/

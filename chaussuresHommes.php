@@ -6,7 +6,9 @@
 	
 	$dbh=mysqli_connect($server, $user_name, $password,$database);
 	
-	$sql = "SELECT connexion FROM personnes WHERE connexion=1";
+	$dbh=mysqli_connect($server, $user_name, $password,$database);
+	
+	$sql = "SELECT connexion,statut FROM personnes WHERE connexion=1";
 	
 	$result = mysqli_query($dbh,$sql);
 	
@@ -22,6 +24,18 @@
 	}
 	
 	
+	if($row["statut"]=='V')
+	{
+		$statut='V';
+	}
+	elseif($row["statut"]=='Ac')
+	{
+		$statut='Ac';
+	}
+	else
+	{
+		$statut='Ad';
+	}
 	
 	mysqli_free_result($result);
 	
@@ -53,9 +67,25 @@
 			}
 			else
 			{
-				var $currentImgConn = $imgConn.eq(1); //image courante
-				$imgConn.css('display', 'none');
-				$currentImgConn.css('display', 'block');
+				if('<?php echo $statut; ?>'=='Ac')
+				{
+					var $currentImgConn = $imgConn.eq(1); //image courante
+					$imgConn.css('display', 'none');
+					$currentImgConn.css('display', 'block');
+				}
+				else if('<?php echo $statut; ?>'=='V')
+				{
+					var $currentImgConn = $imgConn.eq(2); //image courante
+					$imgConn.css('display', 'none');
+					$currentImgConn.css('display', 'block');
+				}
+				else
+				{
+					var $currentImgConn = $imgConn.eq(3); //image courante
+					$imgConn.css('display', 'none');
+					$currentImgConn.css('display', 'block');
+				}
+
 			}
 		});
 	</script>
@@ -81,6 +111,8 @@
 			<ul>
 				<li><a href="creerclient.php"><img src="Images/Menu/compte.png" width="50" height="40"/></a></li>   			 <!--creerclient.php-->
 				<li><a href="monCompteAch.php"><img src="Images/Menu/compteConn.png" width="50" height="40"/></a></li>
+				<li><a href="monCompteVen.php"><img src="Images/Menu/compteConn.png" width="50" height="40"/></a></li>
+				<li><a href="monCompteAdmin.php"><img src="Images/Menu/compteConnAdmin.png" width="50" height="40"/></a></li>
 			</ul>
 		</div>
 		

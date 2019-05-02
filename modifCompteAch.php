@@ -25,7 +25,27 @@
 	
 	mysqli_query($dbh,$sql);
 	
-	include 'monCompteAch.php';
+	
+	$sql = "SELECT statut FROM personnes WHERE connexion=1;";
+
+	$result=mysqli_query($dbh,$sql);
+	
+	$row = mysqli_fetch_assoc($result);
+	
+	if($row["statut"]=='V')
+	{
+		include 'monCompteVen.php';
+	}
+	elseif($row["statut"]=='Ac')
+	{
+		include 'monCompteAch.php';
+	}
+	else
+	{
+		include 'monCompteAdmin.php';
+	}
+	
+	
 	
 	$dbh = null;
 ?>

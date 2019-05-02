@@ -94,6 +94,8 @@ h1
 
 #titre
 {
+	font-family: 'Great Vibes', cursive;
+	font-style: bold;
 	margin-left:40%;
 	font-size:50px;
 	color: #3495DE;
@@ -154,7 +156,7 @@ h1
 	float: left;
 }
 
-p 
+#footer p 
 {
 	font-family: 'Yantramanav', sans-serif;
 	font-size: 16pt;

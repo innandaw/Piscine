@@ -38,15 +38,23 @@
 
 	$dbh=mysqli_connect($server, $user_name, $password, $database);
 
+	$sql = "SELECT mail FROM `personnes` WHERE connexion=1";
 	
-	for ($i = 1; $i <= $nb_tailles ; $i++)
+	$result = mysqli_query($dbh,$sql);
+	
+	$row = mysqli_fetch_assoc($result);
+	
+	if($result)
 	{
-		$sql = "INSERT INTO articles VALUES(NULL, '$nom', '$fichier_nom', '$description', NULL, '$cat', NULL, NULL, '$sous_cat', NULL, '$sexe', NULL, '$j');";
-		$result = mysqli_query($dbh,$sql);
-		$j = $j+1;
+		$idVendeur=$row["mail"];
+	}
+	else
+	{
+		echo "impossible";
+		exit;
 	}
 
-	include 'details_article.html';
+	include 'detail_article.php';
 	
 	//$sql = "INSERT INTO articles ('nom', 'description', 'categorie', 'sous_cat') VALUES('$nom', '$description', '$cat', '$sous_cat');";
 	

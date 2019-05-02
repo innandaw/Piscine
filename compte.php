@@ -5,6 +5,7 @@
 	$server = "localhost";
 	
 	$nom=isset($_POST["lastName"])?$_POST["lastName"]:"";
+	$nom=isset($_POST["lastName"])?$_POST["lastName"]:"";
 	$prenom=isset($_POST["firstName"])?$_POST["firstName"]:"";
 	$dateNais=isset($_POST["date"])?$_POST["date"]:"";
 	$mail=isset($_POST["email"])?$_POST["email"]:"";
@@ -20,10 +21,22 @@
 	$dateExp=isset($_POST["expDate"])?$_POST["expDate"]:"";
 	$cvv=isset($_POST["vvc"])?$_POST["vvc"]:"";
 	
+	$stat = NULL;
 	
-	$dbh=mysqli_connect($server, $user_name, $password,$database);
+	if ($_POST['statut'] == 'Acheteur')
+	{
+		$stat = "Ac";
+		//echo "$sexe";
+	}
+	else 
+	{
+		$stat = "V";
+		//echo "$sexe";
+	}
 	
-	$sql = "INSERT INTO personnes VALUES('$nom','$prenom','$dateNais','$mail','$mdp','$adresse','$ville','$CP', '$pays','$tel','$typeCarte','$numCarte','$nomCarte','$dateExp','$cvv',true);";
+	$dbh=mysqli_connect($server, $user_name, $password,$database);		
+	
+	$sql = "INSERT INTO personnes VALUES('$nom','$prenom','$dateNais','$mail','$mdp','$adresse','$ville','$CP', '$pays','$tel','$typeCarte','$numCarte','$nomCarte','$dateExp','$cvv',true,'$stat');";
 	//$sql = "INSERT INTO personnes (nom,prenom,mail,mdp,adresse,ville,CP,pays,tel,type_carte,numero_carte,nom_carte,cvv) VALUES('$nom', '$prenom', '$mail','$mdp','$adresse','$ville','$CP', '$pays','$tel','$typeCarte','$numCarte','$nomCarte','$cvv');";
 
 	$result = mysqli_query($dbh,$sql);

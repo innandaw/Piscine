@@ -105,9 +105,25 @@
 			}
 			else
 			{
-				var $currentImgConn = $imgConn.eq(1); //image courante
-				$imgConn.css('display', 'none');
-				$currentImgConn.css('display', 'block');
+				if('<?php echo $statut; ?>'=='Ac')
+				{
+					var $currentImgConn = $imgConn.eq(1); //image courante
+					$imgConn.css('display', 'none');
+					$currentImgConn.css('display', 'block');
+				}
+				else if('<?php echo $statut; ?>'=='V')
+				{
+					var $currentImgConn = $imgConn.eq(2); //image courante
+					$imgConn.css('display', 'none');
+					$currentImgConn.css('display', 'block');
+				}
+				else
+				{
+					var $currentImgConn = $imgConn.eq(3); //image courante
+					$imgConn.css('display', 'none');
+					$currentImgConn.css('display', 'block');
+				}
+
 			}
 		});
 	</script>
@@ -132,6 +148,8 @@
 			<ul>
 				<li><a href="creerclient.php"><img src="Images/Menu/compte.png" width="50" height="40"/></a></li>   
 				<li><a href="monCompteAch.php"><img src="Images/Menu/compteConn.png" width="50" height="40"/></a></li>
+				<li><a href="monCompteVen.php"><img src="Images/Menu/compteConn.png" width="50" height="40"/></a></li>
+				<li><a href="monCompteAdmin.php"><img src="Images/Menu/compteConnAdmin.png" width="50" height="40"/></a></li>
 			</ul>
 		</div>
 		
