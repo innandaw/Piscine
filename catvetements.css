@@ -17,21 +17,55 @@
 {
 	float: left;
 	margin-left:270px;
-	margin-top:25px;
+	margin-top:15px;
 }
 
-#logoPannier
+#logopanier
 { 
 	float: left; 
-	margin-left: 300px;
-	margin-top: 20px;
+	margin-left: 260px;
+	margin-top: 13px;
 }
 
-#logoCompte
+#logoCompte ul li
 { 
 	float: left; 
-	margin-left: 10px;
-	margin-top: 20px;
+	margin-left: 1125px;
+	margin-top: 1px;
+	position: absolute;
+	list-style: none;
+}
+
+#pann
+{
+	float: left;
+	font-family: Calibri;
+	font-size: 17px;
+	margin-left: 870px;
+	margin-top: 1px;
+	color:#3495DE;
+}
+
+#conn
+{
+	float: left;
+	font-family: Calibri;
+	font-size: 17px;
+	margin-left: 20px;
+	margin-top: 1px;
+	color:#3495DE;
+}
+
+h1
+{
+	font-family: 'Great Vibes', cursive;
+}
+
+#titre
+{
+	margin-left:40%;
+	font-size:50px;
+	color: #3495DE;
 }
 
 #champ       
@@ -58,18 +92,11 @@
 #cat
 {
 	margin-left: 30px;
-	margin-top: 5px;
 }
 
 #admin, #ventesFlash, #vendre
 {
 	margin-left: 200px;
-	margin-top: 5px;
-}
-
-h1
-{
-	font-family: 'Great Vibes', cursive;
 }
 
 #titre
@@ -77,12 +104,6 @@ h1
 	margin-left:42%;
 	font-size:50px;
 	color: #3495DE;
-}
-
-#admin, #ventesFlash, #vendre
-{
-	margin-left: 200px;
-	margin-top: 5px;
 }
 
 #cat1, #cat2
