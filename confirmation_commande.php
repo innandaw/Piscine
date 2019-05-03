@@ -1,57 +1,85 @@
 <?php
 
-//	$user_name = "root";
-//	$password = "";
-//	$database = "eceamazon";
-//	$server = "localhost";
-
-$nom="Ndaw";
-$prenom="Inna";
-$dateNais="26_09_1996";
-$adresse="47 rue Navier";
-$mail="inna.ndaw@wanadoo.fr";
-$ville="Paris";
-$CP="75017";
-$pays="France";
-$tel="0601460553";
-$typeCarte="Visa";
-$numCarte="0000000000000000000000";
-$nomCarte="Ndaw Inna";
-$dateExp="26-09-1996";
-$cvv="000";
-
-
-//$nom = $_SESSION["nom"];
-            
-
-
-
-
-//	$nom=isset($_POST["lastName"])?$_POST["lastName"]:"";
-//	$prenom=isset($_POST["firstName"])?$_POST["firstName"]:"";
-//	$dateNais=isset($_POST["date"])?$_POST["date"]:"";
-//	$adresse=isset($_POST["address"])?$_POST["address"]:"";
-//	$ville=isset($_POST["city"])?$_POST["city"]:"";
-//	$CP=isset($_POST["postalCode"])?$_POST["postalCode"]:"";
-//	$pays=isset($_POST["country"])?$_POST["country"]:"";
-//	$tel=isset($_POST["phone"])?$_POST["phone"]:"";
-//	$typeCarte=isset($_POST["cardType"])?$_POST["cardType"]:"";
-//	$numCarte=isset($_POST["nbCard"])?$_POST["nbCard"]:"";
-//	$nomCarte=isset($_POST["nameCard"])?$_POST["nameCard"]:"";
-//    $dateExp=isset($_POST["expDate"])?$_POST["expDate"]:"";
-//	$cvv=isset($_POST["vvc"])?$_POST["vvc"]:"";
-
+	$user_name = "root";
+	$password = "";
+	$database = "eceamazon";
+	$server = "localhost";
 	
 	
-
-	//$dbh=mysqli_connect($server, $user_name, $password,$database);
+	$dbh=mysqli_connect($server, $user_name, $password,$database);
 	
-//	$sql = "UPDATE personnes SET prenom='$prenom' , nom='$nom' , date_naissance='$dateNais' , adresse='$adresse' , CP='$CP' , ville='$ville' , pays='$pays' , tel='$tel' , type_carte='$typeCarte' , numero_carte='$numCarte' , nom_carte='$nomCarte' , date_exp='$dateExp' , cvv='$cvv' WHERE connexion=1;";
-//	
-//	mysqli_query($dbh,$sql);
-//	s
-//	
-//	$dbh = null;
+	$dbh=mysqli_connect($server, $user_name, $password,$database);
+	
+	$sql = "SELECT connexion,statut FROM personnes WHERE connexion=1";
+	
+	$result = mysqli_query($dbh,$sql);
+	
+	$row = mysqli_fetch_assoc($result);
+	
+	if($row["connexion"]==0)
+	{
+		$conn=0;
+	}
+	else
+	{
+		$conn=1;
+	}
+	
+	
+	if($row["statut"]=='V')
+	{
+		$statut='V';
+	}
+	elseif($row["statut"]=='Ac')
+	{
+		$statut='Ac';
+	}
+	else
+	{
+		$statut='Ad';
+	}
+	
+	$sql = "SELECT * FROM personnes WHERE connexion=1";
+
+	$result = mysqli_query($dbh,$sql);
+
+	while ($row = mysqli_fetch_assoc($result)) 
+	{		
+	   //echo "Prenom: " . $row["prenom"] . "<br>";
+	   $prenom=$row["prenom"];
+	   //echo "Nom: " . $row["nom"] . "<br>";
+	   $nom=$row["nom"];
+	   //echo "DateNaissnce: " . $row["date_naissance"] . "<br>";
+	   $dateNais=$row["date_naissance"];
+	   //echo "Mail: " . $row["mail"] . "<br>";
+	   $mail=$row["mail"];
+	   //echo "adresse: " . $row["adresse"] . "<br>";
+	   $adresse=$row["adresse"];
+	   //echo "ville: " . $row["ville"] . "<br>";
+	   $ville=$row["ville"];
+	   //echo "CP: " . $row["CP"] . "<br>";
+	   $cp=$row["CP"];
+	   //echo "Pays: " . $row["pays"] . "<br>";
+	   $pays=$row["pays"];
+	   //echo "tel: " . $row["tel"] . "<br>";
+	   $tel=$row["tel"];
+	   //echo "typeCarte: " . $row["type_carte"] . "<br>";
+	   $typeCarte=$row["type_carte"];
+	   //echo "Num carte: " . $row["numero_carte"] . "<br>";
+	   $numCarte=$row["numero_carte"];
+	   //echo "Nom carte: " . $row["nom_carte"] . "<br>";
+	   $nomCarte=$row["nom_carte"];
+	   //echo "Date exp: " . $row["date_exp"] . "<br>";
+	   $dateExp=$row["date_exp"];
+	   //echo $row["cvv"] . $row["cvv"];
+	   $cvv=$row["cvv"];
+	   //echo "<br>";
+	}
+	
+	mysqli_free_result($result);
+
+
+	$dbh = null;
 
 ?>
 
@@ -73,7 +101,7 @@ $cvv="000";
 		</div>
 		
 		<div id="logopanier">
-			<img src="Images/Menu/panier.png" width="50" height="40"/>   
+			<a href="panier.php"><img src="Images/Menu/panier.png" width="50" height="40"/></a> 
 		</div>
 		
 		<div id="logoCompte">
@@ -82,45 +110,32 @@ $cvv="000";
 		
 	</div>
     
-<div id="recap_commande">
- 
-</div>
- 
-<div id="mess_confirmation">
-    
-  
-     <h1 id="felicitations">Félicitations</h1>    
+	<div id="recap_commande">
+	 
+	</div>
+	 
+	<div id="mess_confirmation">  
+	    <h1 id="felicitations">Félicitations</h1>    
 
-<p> Tu recevras ta commande d'ici</p>
+		<p> Tu recevras ta commande d'ici</p>
 
-<?php 
-    session_start();
-
-    $choix_livr= $_SESSION["choix_livr"];
-
-    
-
-    
-    
-         
- if ($choix_livr=="dom")
-        echo'<center><div id="dom">3-5 jours ouvrés a ton domicile : '.$adresse.' '.$CP.' '.$ville.'</div></p><center>';
-if ($choix_livr=="relais")
-         echo'<p><div id="relais">2-3 jours ouvrés dans votre point relais</div><p>'; 
- if ($choix_livr=="prenium")
-         echo'<p><div id="prenium">Sous 24h chez vous au</p> '.$adresse.'</div><p>';  
-    
- echo '<p><div id="mail">Un mail vient de t’être envoyé à l’adresse: '.$mail.'</div></p>';  
-
-?>
-    
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<p>Si les informations ci-dessus sont erronées, n’hésite pas à nous contacter <a href="mailto:inna.ndaw@wanadoo.fr?subject=Question sur ma commande&body=[Veuillez renseigner votre numéro de panier ici]"><br>S.A.V ECE Amazon</a></p>
-
-</div>
+		<?php   
+		 	if ($choix_livr=="dom")
+		        echo'<center><div id="dom">3-5 jours ouvrés à ton domicile : '.$adresse.' '.$cp.' '.$ville.'</div><center>';
+			if ($choix_livr=="relai")
+		        echo'<center><div id="dom">2-3 jours ouvrés dans votre point relais</div><center>'; 
+		 	if ($choix_livr=="prenium")
+		        echo'<p><div id="dom">Sous 24h chez vous au '.$adresse.'</div></p>';  
+		    
+		 	echo '<p><div id="mail">Un mail vient de t’être envoyé à l’adresse: '.$mail.'</div></p>';  
+		?>
+		    
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<p>Si les informations ci-dessus sont erronées, n’hésite pas à nous contacter <a href="mailto:inna.ndaw@wanadoo.fr?subject=Question sur ma commande&body=[Veuillez renseigner votre numéro de panier ici]"><br>S.A.V ECE Amazon</a></p>
+	</div>
 
     
-<div id="footer">
+	<div id="footer">
 		<div id="col1">
 			<p>Pour mieux nous connaitre</p>
 		 	<a href="apropos.html">A propos d'ECE Amazon</a><br/>
