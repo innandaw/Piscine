@@ -1,6 +1,6 @@
 <?php 
 	$user_name = "root";
-	$password = "";
+	$password = "root";
 	$database = "eceamazon";
 	$server = "localhost";
 	
@@ -85,6 +85,8 @@
 					$currentImgConn.css('display', 'block');
 				}
 			}
+			
+			
 		});
 	</script>
 </head> 

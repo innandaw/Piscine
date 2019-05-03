@@ -8,12 +8,13 @@
 	
 	$dbh=mysqli_connect($server, $user_name, $password,$database);
 	
-	$sql = "SELECT connexion,statut FROM personnes WHERE connexion=1";
+	$sql = "SELECT connexion,statut,mail FROM personnes WHERE connexion=1";
 	
 	$result = mysqli_query($dbh,$sql);
 	
 	$row = mysqli_fetch_assoc($result);
 	
+	$id=$row["mail"];
 	if($row["connexion"]==0)
 	{
 		$conn=0;
@@ -22,7 +23,6 @@
 	{
 		$conn=1;
 	}
-	
 	
 	if($row["statut"]=='V')
 	{
@@ -46,11 +46,10 @@
 <!DOCTYPE html> 
 <head> 
 	<title>ECE Amazon</title> 
-	<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
-
 	<meta charset="utf-8" /> 
-	<link href="catmusique.css" rel="stylesheet" type="text/css"/> 
+	<link href="voir_produit.css" rel="stylesheet" type="text/css"/> 
+	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript">
@@ -85,8 +84,9 @@
 					$imgConn.css('display', 'none');
 					$currentImgConn.css('display', 'block');
 				}
-
 			}
+			
+			
 		});
 	</script>
 </head> 
@@ -97,15 +97,14 @@
 			<a href="mainPage.php"><img src="Images/Menu/logo.png" id="Logo" width="140" height="60"/></a>  
 		</div>
 		    
-        <form id="barre">
-            <input id="champ" type="text" value="Rechercher..."/>
-            <input id="bouton" type="button"/>   
-        </form> 
+        <div id="barre">
+            <h1>Ma vitrine</h1>  
+        </div> 
 		
 		<div id="logopanier">
 			<img src="Images/Menu/panier.png" width="50" height="40"/>   
 		</div>
-		
+
 		<div id="logoCompte">
 			<ul>
 				<li><a href="creerclient.php"><img src="Images/Menu/compte.png" width="50" height="40"/></a></li>   
@@ -117,29 +116,75 @@
 		
 		<h1 id="pann">Mon panier</h1>
 		<a href="creerclient.php"><h1 id="conn">Connexion</h1></a>		
-		
 	</div>
-	<div id="menu">
-		<a href="categories.php"><img src="Images/Menu/categories.png" width="140" height="25" id="cat"/></a>
-		<img src="Images/Menu/admin.png" width="140" height="25" id="admin"/>
-		<img src="Images/Menu/ventesFlash.png" width="140" height="25" id="ventesFlash"/>
-		<a href="ajouter_article.php"><img src="Images/Menu/vendre.png" width="140" height="25" id="vendre"/></a>
+    
+
+	
+	<div id="cadre">
+		<?php 
+	
+		$user_name = "root";
+		$password = "root";
+		$database = "eceamazon";
+		$server = "localhost";
+		
+		$total=0;
+		
+		$dbh=mysqli_connect($server, $user_name, $password,$database);
+		
+		$sql = "SELECT id,nom,description,prix,taille,photos,couleur FROM articles WHERE id_vendeur='$id' GROUP BY nom";
+
+		$result = mysqli_query($dbh,$sql);
+		
+		if (!$result) 
+		{
+			echo "Impossible d'exécuter la requête ($sql) dans la base";
+			exit;
+		}
+		
+		// dossier de destination
+		$fichier_dossier = 'Images/Hommes/Bas/';
+		
+		while ($row = mysqli_fetch_assoc($result)) 
+		{	
+			$nom=$row["nom"];
+			$description=$row["description"];
+			$prix=$row["prix"];
+			$taille=$row["taille"];
+			$couleur=$row["couleur"];
+			$img=$row["photos"];
+			$id=$row["id"];
+			$total=$total+$prix;
+
+			
+			// on renomme le fichier, chemin d'acces
+			$img1 = $fichier_dossier.$img;
+			
+			echo '<div id="photo1"><img src="'.$img1.'" width="130" height="170"/></div>';
+			echo '<div id="infos">
+					<div id="gauche">
+						<h2>'.$nom.'</h2>
+						<h3 id="infos1">'.$description.'</h3>
+					</div>
+					<div id="droite">
+						<h2 class="infos3">'.$prix.' €</h2>
+                       </n></n></n>
+					</div>
+				</div>';
+			
+		}
+		
+        mysqli_free_result($result);
+
+        $dbh=null;?>
+		
+		<div id="tot">
+			Total des produits à la vente : <?php echo $total?>
+		</div>
 	</div>
 
-	<h1 id="titre">Musique</h1>
 	
-	<div>
-		<a href="musique_class.php"><img src="Images/musique/classic.jpg" type="bouton" id="cat1"/></a>
-		<a href="musique_com.php"><img src="Images/musique/commercial.jpg" type="bouton" id="cat2"/></a>
-		<a href="musique_rock.php"><img src="Images/musique/rock.jpg" type="bouton" id="cat3"/></a>
-	</div>	
-	
-	<div>
-		<h1 id="t1">Classique</h1>
-		<h1 id="t2">Commerciale</h1>
-		<h1 id="t3">Rock</h1>
-	</div>
-	
+
 	<div id="footer">
 		<div id="col1">
 			<p>Pour mieux nous connaitre</p>
@@ -152,8 +197,8 @@
 		 	<p>Catégories</p>
 		 	<a href="catvetements.php">Vêtements</a><br/>
 		 	<a href="catsport.php">Sport et loisirs</a><br/>
-		 	<a href="catlivres.php">Livres</a><br/>
-		 	<a href="catmusique.php">Musique</a>
+		 	<a href="catbook.html">Livres</a><br/>
+		 	<a href="catmusic.html">Musique</a>
 	 	</div>
 
 	 	<div id="col3">
@@ -173,5 +218,6 @@
 	 		<a href="mention.html">Mentions légales</a>
 	 	</div>
 	</div>	
+	
 </body> 
 </html> 

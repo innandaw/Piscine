@@ -3,40 +3,20 @@
 	$password = "root";
 	$database = "eceamazon";
 	$server = "localhost";
-	$id_article=$_GET['ident'];			
+	$id_article=$_GET['idArticle'];			
 
 	$dbh=mysqli_connect($server, $user_name, $password,$database);
 	
-	$sql = "SELECT COUNT(*),mail,statut FROM personnes WHERE Connexion=1";
+	$sql = "DELETE FROM articles WHERE id = $id_article";
 	
 	$result = mysqli_query($dbh,$sql); 
-	
-	$row = mysqli_fetch_assoc($result);
-	
-	if($row["COUNT(*)"]==0 && $row["statut"]=='Ac')
-	{
-		$sql = "INSERT INTO panier VALUES  (NULL,'nc',$id_article)";
-	
-		$result = mysqli_query($dbh,$sql); 
-	}
-	elseif($row["COUNT(*)"]!=0 && $row["statut"]=='Ac')
-	{
-		$id_acheteur=$row["mail"];
-		
-		$sql = "INSERT INTO panier VALUES  (NULL,'$id_acheteur',$id_article)";
-	
-		$result = mysqli_query($dbh,$sql); 
-	}
-	else
-	{
-		echo "Vous n'avez pas le statut d'acheteur donc pas possible";
-	}
 	
 	$sql = "SELECT sous_cat,sexe FROM articles WHERE id=$id_article";
 	
 	$result = mysqli_query($dbh,$sql); 
 	
 	$row = mysqli_fetch_assoc($result);
+	
 	
 	if($row["sous_cat"]=="hauts")
 	{
@@ -49,7 +29,7 @@
 			include 'hautsHommes.php';
 		}
 	}
-	elseif($row["sous_cat"]=="bas")
+	elseif($row["sous_cat"]=="Bas")
 	{
 		if($row["sexe"]=='F')
 		{
@@ -64,7 +44,6 @@
 	{
 		if($row["sexe"]=='F')
 		{
-			echo 1;
 			include 'chaussuresFemmes.php';
 		}
 		else
@@ -78,7 +57,7 @@
 	}
 	elseif($row["sous_cat"]=="elec")
 	{
-		include 'elec_vet.php';
+		include 'sport_elec.php';
 	}
 	elseif($row["sous_cat"]=="access")
 	{

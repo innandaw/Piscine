@@ -13,17 +13,19 @@
 	margin-top:10px;
 }
 
-#barre
+#barre h1
 {
+	font-family: 'Great Vibes', cursive;
 	float: left;
-	margin-left:270px;
-	margin-top:15px;
+	color: #3495DE;
+	margin-left:27%;
+	font-size:40px;
 }
 
 #logopanier
 { 
 	float: left; 
-	margin-left: 260px;
+	margin-left: 347px;
 	margin-top: 13px;
 }
 
@@ -41,7 +43,7 @@
 	float: left;
 	font-family: Calibri;
 	font-size: 17px;
-	margin-left: 870px;
+	margin-left: 330px;
 	margin-top: 1px;
 	color:#3495DE;
 }
@@ -56,20 +58,6 @@
 	color:#3495DE;
 }
 
-#champ       
-{
-	width:300px; 
-	height:30px;
-}
-
-#bouton       
-{ 
-	background-image: url("Images/Menu/barreRecherche.png");
-	background-position: center;
-	box-shadow: none;
-	width:50px; 
-	height:33px;
-}
 
 #menu
 {
@@ -80,11 +68,7 @@
 #cat
 {
 	margin-left: 30px;
-}
-
-#admin, #ventesFlash, #vendre
-{
-	margin-left: 200px;
+	margin-top: 5px;
 }
 
 h1
@@ -94,17 +78,24 @@ h1
 
 #titre
 {
-	font-family: 'Great Vibes', cursive;
-	font-style: bold;
 	margin-left:40%;
 	font-size:50px;
 	color: #3495DE;
 }
 
+#cadre 
+{
+	margin-top: 20px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	border : solid;
+	border-color: #3495DE;
+}
+
 #infos
 {
 	float: left;
-	margin-left: 80px;
+	margin-left: 160px;
 	margin-top: 10px;
 	margin-bottom: 30px
 }
@@ -127,7 +118,7 @@ h1
 {
 	float:left;
 	margin-top:20px;
-	margin-left:60px;
+	margin-left:40px;
 }
 
 #infos1
@@ -142,27 +133,15 @@ h1
 	text-align:justify;
 }
 
-.infos3
-{
-	margin-left:75px;
-}
-
-#suppr
-{
-	float:left;
-	margin-top:20px;
-}
-
 #footer
 {
-	margin-top:500px;
+	margin-top:800px;
 	background-color: black;
 	color: #3495DE;
 	height:200px;
-	float: left;
 }
 
-#footer p 
+p 
 {
 	font-family: 'Yantramanav', sans-serif;
 	font-size: 16pt;

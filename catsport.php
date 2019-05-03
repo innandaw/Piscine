@@ -1,6 +1,6 @@
 <?php 
 	$user_name = "root";
-	$password = "";
+	$password = "root";
 	$database = "eceamazon";
 	$server = "localhost";
 	
@@ -129,9 +129,9 @@
 	<h1 id="titre">Sports et Loisirs</h1>
 	
 	<div>
-		<a href="catvetements.php"><img src="Images/Sports/sport1.jpg" type="bouton" id="cat1"/></a>
-		<a href="catsport.php"><img src="Images/Sports/sport2.jpg" type="bouton" id="cat2"/></a>
-		<a href="catlivres.php"><img src="Images/Sports/sport3.jpg" type="bouton" id="cat3"/></a>
+		<a href="sport_vet.php"><img src="Images/Sports/sport1.jpg" type="bouton" id="cat1"/></a>
+		<a href="sport_elec.php"><img src="Images/Sports/sport2.jpg" type="bouton" id="cat2"/></a>
+		<a href="sport_access.php"><img src="Images/Sports/sport3.jpg" type="bouton" id="cat3"/></a>
 	</div>	
 	
 	<div>

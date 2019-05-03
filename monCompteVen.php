@@ -1,6 +1,6 @@
 <?php
 	$user_name = "root";
-	$password = "";
+	$password = "root";
 	$database = "eceamazon";
 	$server = "localhost";
 	
@@ -202,7 +202,7 @@
 	
 	<a href ="connecte.php"><div id="decon"><input type="button" id="deconnecte" width="42px" height="45px"></div></a>
 	<a href ="modifImgPref.php"><div id="modifImg"><input type="button" value="Modifier mon image de fond préférée" id="imgfav"></div></a>
-	<a href ="voirProduits.php"><div id="voirprod"><input type="button" value="Voir mes produits en vente" id="vente"></div></a>
+	<a href ="voir_produit.php"><div id="voirprod"><input type="button" value="Voir mes produits en vente" id="vente"></div></a>
 	<a href ="ajouter_article.php"><div id="ajoutprod"><input type="button" value="Ajouter un produits à la vente" id="ajout"></div></a>
 	
 	<div id="footer">
