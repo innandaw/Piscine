@@ -1,6 +1,5 @@
 <?php
 
-
 	$user_name = "root";
 	$password = "";
 	$database = "eceamazon";
@@ -81,6 +80,7 @@
 
 
 	$dbh = null;
+
 ?>
 
 <!DOCTYPE html> 
@@ -91,7 +91,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
 
 	<meta charset="utf-8" /> 
-	<link href="livraison.css" rel="stylesheet" type="text/css"/> 
+	<link href="confirmation_commande1.css" rel="stylesheet" type="text/css"/> 
 </head> 
  
 <body>
@@ -101,7 +101,7 @@
 		</div>
 		
 		<div id="logopanier">
-			<img src="Images/Menu/panier.png" width="50" height="40"/>   
+			<a href="panier.php"><img src="Images/Menu/panier.png" width="50" height="40"/></a> 
 		</div>
 		
 		<div id="logoCompte">
@@ -110,82 +110,30 @@
 		
 	</div>
     
-    <h1 id="titre_livr">   Livraison</h1><br><br><br><br><br><br><br>
+	<div id="recap_commande">
+	 
+	</div>
+	 
+	<div id="mess_confirmation">  
+	    <h1 id="felicitations">Félicitations</h1>    
 
+		<h2> Tu recevras ta commande d'ici</h2>
 
-   <div id="form_livr">
-        <form action="livraison_form.php" method="post">
-    
-            
-	        <table>
-	            <div id="moy_livr">
-		            <h3>Livraison</h3>
-		         
-		                <legend>Choisissez comment vous souhaitez vous faire livrer</legend>
-		            <br>
-		                    <input type="radio" id="dom" name="typedelivery" value="dom" checked>
-		                    <label for="dom">Livraison à domicile sous 3-5 jours ouvrés</label>
-		            <br>
-		   
-		                    <input type="radio" id="relai" name="typedelivery" value="relai">
-		                    <label for="relai">Livraison en point relais sous 2-3 jours ouvrés</label>
-		            <br>
-		          
-		                    <input type="radio" id="prenium" name="typedelivery" value="prenium">
-		                    <label for="prenium">Livraison express sous 24h - prenium </label>
-		            <tr>
-	   			</div>
-	       
+		<?php   
+		 	if ($choix_livr=="dom")
+		        echo'<center><div id="dom">3-5 jours ouvrés à ton domicile : '.$adresse.' '.$cp.' '.$ville.'</div><center>';
+			if ($choix_livr=="relai")
+		        echo'<center><div id="dom">2-3 jours ouvrés dans votre point relais</div><center>'; 
+		 	if ($choix_livr=="prenium")
+		        echo'<p><div id="dom">Sous 24h chez vous au '.$adresse.'</div></p>';  
+		    
+		 	echo '<p><div id="mail">Un mail vient de t’être envoyé à l’adresse: '.$mail.'</div></p>';  
+		?>
+		    
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<p>Si les informations ci-dessus sont erronées, n’hésite pas à nous contacter <a href="mailto:inna.ndaw@wanadoo.fr?subject=Question sur ma commande&body=[Veuillez renseigner votre numéro de panier ici]"><br>S.A.V ECE Amazon</a></p>
+	</div>
 
-	            <h3>Informations de livraison</h3>
-	            <tr>
-	               <td>Nom</td>
-	               <td><input type="text" name="nom" value="<?php echo $nom;?>"></td>
-	           </tr>
-	            <tr>
-	               <td>Prénom</td>
-	               <td><input type="text" name="prenom" value="<?php echo $prenom;?>"></td>
-	           </tr>
-	           <tr>
-	               <td>Adresse</td>
-	               <td><input type="text" name="Adresse" value="<?php echo $adresse;?>"></td>
-	           </tr>
-	           <tr>
-	               <td>Code Postal</td>
-	               <td><input type="text" name="CP" value="<?php echo $cp;?>"></td>
-	           </tr>
-	            <tr>
-	               <td>Ville</td>
-	               <td><input type="text" name="Ville" value="<?php echo $ville;?>"></td>
-	           </tr>
-	            <tr>
-	             <td>Pays</td>
-	               <td><input type="text" name="pays" value="<?php echo $pays;?>"></td>
-	           </tr>
-	            <tr>
-	            <td>Tel</td>
-	               <td><input type="text" name="tel" value="<?php echo $tel;?>"></td>
-	           </tr>
-	           <tr>
-	               <td colspan="2">
-	                      <br><br>
-	                <input type="submit" value="confirmer mes données de livraison">
-	               </td>
-	           </tr>
-	            
-	        </table>
-        </form>       
-    </div>
-          
-<div id="recap_commande">
-  
-</div>
-
-
-
-
-        <br><br>
-    
     
 	<div id="footer">
 		<div id="col1">

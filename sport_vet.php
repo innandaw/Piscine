@@ -136,6 +136,10 @@
         $img1 = $fichier_dossier.$img;
 		
 		echo '<div id="photo1"><img src="'.$img1.'" width="130" height="170"/></div>';
+		if($statut=='Ad')
+		{
+			echo '<a href ="supprArticle.php?idArticle='.$id.'&chemin=0"><div id="suppr"><img src="Images/supprime.png" width="70" height="70"/></div></a>';
+		}
 		echo '<div id="infos">
 				<div id="gauche">
 					<h2>'.$nom.'</h2>
@@ -143,7 +147,7 @@
 				</div>
 				<div id="droite">
 					<h2 class="infos3">'.$prix.' €</h2>
-					<a href="ajouterPanier.php?ident='.$id.'"><img src="Images/panier.png" width="70" height="70" class="infos3"/></a>
+					<a href="ajouterPanier.php?ident='.$id.'&chemin=0"><img src="Images/panier.png" width="70" height="70" class="infos3"/></a>
 						
 
 					<h2 id="infos5">Ajouter à mon panier</h2>

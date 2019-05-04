@@ -136,6 +136,10 @@
         $img1 = $fichier_dossier.$img;
 		
 		echo '<div id="photo1"><img src="'.$img1.'" width="130" height="170"/></div>';
+		if($statut=='Ad')
+		{
+			echo '<a href ="supprArticle.php?idArticle='.$id.'&chemin=0"><div id="suppr"><img src="Images/supprime.png" width="70" height="70"/></div></a>';
+		}
 		echo '<div id="infos">
 				<div id="gauche">
 					<h2>'.$nom.'</h2>

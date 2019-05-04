@@ -85,6 +85,8 @@
 					$currentImgConn.css('display', 'block');
 				}
 			}
+			
+			
 		});
 	</script>
 </head> 

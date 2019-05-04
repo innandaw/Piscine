@@ -195,8 +195,8 @@
 		<h2>Votre mail  <?php echo $mail;?></h2>
 	</div>
 	
-	<a href ="voirProduits.php"><div id="voirprod"><input type="button" value="Gérer les vendeurs" id="vente"></div></a>
-	<a href ="ajouter_article.php"><div id="ajoutprod"><input type="button" value="Gérer les articles" id="ajout"><br><br><br></div></a>
+	<a href ="gererVendeur.php"><div id="voirprod"><input type="button" value="Gérer les vendeurs" id="vente"></div></a>
+	<a href ="gererArticle.php"><div id="ajoutprod"><input type="button" value="Gérer les articles" id="ajout"><br><br><br></div></a>
 	<a href ="connecte.php"><div id="decon"><input type="button" value="Déconnexion" id="deconnecte"></div></a>
 
 	

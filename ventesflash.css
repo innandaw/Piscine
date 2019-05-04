@@ -112,7 +112,7 @@ h1
 #photo1
 {
 	float: left;
-	margin-top: 70px;
+	margin-top: 45px;
 	margin-left: 100px;
 	margin-bottom: 30px
 }
@@ -120,12 +120,13 @@ h1
 #gauche
 {
 	float: left;
-	width: 550px;
+	width: 500px;
 }
 
 #droite
 {
 	float:left;
+	margin-top:20px;
 	margin-left:60px;
 }
 
@@ -150,31 +151,6 @@ h1
 {
 	float:left;
 	margin-top:20px;
-}
-
-#siz, #col
-{
-	float:left;
-	font-size: 15pt;
-	height:15px;
-}
-
-#siz p, #col p
-{
-	color: black;
-	font-family: 'Yantramanav', sans-serif;
-	font-size:15px;
-	font-style: bold;
-}
-
-#sizes h3, #color h3
-{
-	float:left;
-	margin-left:5px;
-	margin-right:15px;
-	color: black;
-	font-family: 'Yantramanav', sans-serif;
-	font-size:15px;
 }
 
 #footer
@@ -212,4 +188,9 @@ a
 	font-size: 12pt;
 	font-family: 'Yantramanav', sans-serif;
 	margin-top: 110px;
+}
+
+#lesproduits
+{
+   margin-left: 250px;
 }
