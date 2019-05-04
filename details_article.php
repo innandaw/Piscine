@@ -30,9 +30,6 @@
 	$dbh=mysqli_connect($server, $user_name, $password, $database);
 
 	$nom = $_SESSION["nom"];
-/*
-	$nom = $_SESSION["j"];
-	echo $j;*/
 
 
 
@@ -54,4 +51,5 @@
 		
 
 	$dbh = null;
+
 ?>

@@ -1,3 +1,4 @@
+
 <?php 
 	$user_name = "root";
 	$password = "";
@@ -127,7 +128,7 @@
 		<a href="ajouter_article.php"><img src="Images/Menu/vendre.png" width="140" height="25" id="vendre"/></a>
 	</div>
 
-	<h1 id="titre">Hauts Femmes</h1>
+	<h1 id="titre">Chaussures Femmes</h1>
 	
 	<?php 
 	
@@ -138,7 +139,7 @@
 	
 	$dbh=mysqli_connect($server, $user_name, $password,$database);
 	
-	$sql = "SELECT nom,description,prix,taille, couleur FROM articles WHERE categorie='Vetements' AND sous_cat='Chaussures' AND sexe='F' GROUP BY nom";
+	$sql = "SELECT nom,description,prix,taille, photos, couleur,id FROM articles WHERE categorie='Vetements' AND sous_cat='Chaussures' AND sexe='F' GROUP BY nom";
 	
 	$result = mysqli_query($dbh,$sql);
 	
@@ -148,6 +149,9 @@
 	    exit;
 	}
 	
+	// dossier de destination
+    $fichier_dossier = 'Images/Femmes/Chaussures/';
+	
 	while ($row = mysqli_fetch_assoc($result)) 
 	{	
 		$nom=$row["nom"];
@@ -155,18 +159,28 @@
 		$prix=$row["prix"];
 	    $taille=$row["taille"];
 	    $couleur=$row["couleur"];
+	    $img=$row["photos"];
+	    $id=$row["id"];
+
+	    
+        // on renomme le fichier, chemin d'acces
+        $img1 = $fichier_dossier.$img;
 		
-		echo '<div id="photo1"><img src="Images/Femmes/Chaussures/chaussures3.png" width="130" height="170"/></div>';
+		echo '<div id="photo1"><img src="'.$img1.'" width="130" height="170"/></div>';
+        if($statut=='Ad')
+		{
+			echo '<a href ="supprArticle.php?idArticle='.$id.'&chemin=0"><div id="suppr"><img src="Images/supprime.png" width="70" height="70"/></div></a>';
+		}
 		echo '<div id="infos">
 				<div id="gauche">
 					<h2>'.$nom.'</h2>
 					<h3 id="infos1">'.$description.'</h3>
-					<h3 class="infos2">Taille : '.$taille.'</h3>
-					<h3 class="infos2">Couleur : '.$couleur.'</h3>
 				</div>
 				<div id="droite">
 					<h2 class="infos3">'.$prix.' €</h2>
-					<img src="Images/panier.png" width="70" height="70" class="infos3"/>
+					<a href="ajouterPanier.php?ident='.$id.'"><img src="Images/panier.png" width="70" height="70" class="infos3"/></a>
+						
+
 					<h2 id="infos5">Ajouter à mon panier</h2>
 				</div>
 			</div>';
@@ -213,4 +227,5 @@
 	</div>	
 	
 </body> 
+
 </html> 

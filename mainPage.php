@@ -21,7 +21,6 @@
 		$conn=1;
 	}
 	
-	
 	if($row["statut"]=='V')
 	{
 		$statut='V';
@@ -51,16 +50,21 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 		
-		var $indexImgConn = 0;
 		var $logoCompte = $('#logoCompte');
 		var $imgConn = $('#logoCompte img');
+		
+		var $logoPanier = $('#logopanier');
+		var $imgPanier = $('#logopanier img');
 
 		if('<?php echo $conn; ?>'==0)
 		{		
-			
 			var $currentImgConn = $imgConn.eq(0); //image courante
 			$imgConn.css('display', 'none');
 			$currentImgConn.css('display', 'block');
+			
+			var $currentImgVend = $imgVend.eq(1); //image courante
+			$imgVend.css('display', 'none');
+			$currentImgVend.css('display', 'block');
 		}
 		else
 		{
@@ -70,18 +74,30 @@
 				var $currentImgConn = $imgConn.eq(1); //image courante
 				$imgConn.css('display', 'none');
 				$currentImgConn.css('display', 'block');
+				
+				var $currentImgVend = $imgVend.eq(1); //image courante
+				$imgVend.css('display', 'none');
+				$currentImgVend.css('display', 'block');
 			}
 			else if('<?php echo $statut; ?>'=='V')
 			{
 				var $currentImgConn = $imgConn.eq(2); //image courante
 				$imgConn.css('display', 'none');
 				$currentImgConn.css('display', 'block');
+				
+				var $currentImgVend = $imgVend.eq(0); //image courante
+				$imgVend.css('display', 'none');
+				$currentImgVend.css('display', 'block');
 			}
 			else
 			{
 				var $currentImgConn = $imgConn.eq(3); //image courante
 				$imgConn.css('display', 'none');
 				$currentImgConn.css('display', 'block');
+				
+				var $currentImgVend = $imgVend.eq(0); //image courante
+				$imgVend.css('display', 'none');
+				$currentImgVend.css('display', 'block');
 			}
 		}
 		
@@ -163,7 +179,7 @@
         </form> 
 		
 		<div id="logopanier">
-			<img src="Images/Menu/panier.png" width="50" height="40"/>   
+			<a href="panier.php"><img src="Images/Menu/panier.png" width="50" height="40"/></a> 
 		</div>
 		
 		<div id="logoCompte">
@@ -182,8 +198,10 @@
 	<div id="menu">
 		<a href="categories.php"><img src="Images/Menu/categories.png" width="140" height="25" id="cat"/></a>
 		<img src="Images/Menu/admin.png" width="140" height="25" id="admin"/>
-		<img src="Images/Menu/ventesFlash.png" width="140" height="25" id="ventesFlash"/>
+		<a href="ventesFlash.php"><img src="Images/Menu/ventesFlash.png" width="140" height="25" id="ventesFlash"/></a>
+
 		<a href="ajouter_article.php"><img src="Images/Menu/vendre.png" width="140" height="25" id="vendre"/></a>
+	
 	</div>
 
 	<h1 id="titre">Ventes Flash</h1>
@@ -245,4 +263,3 @@
 	</div>	
 	
 </body> 
-</html> 

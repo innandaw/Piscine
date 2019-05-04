@@ -128,9 +128,11 @@
 	<h1 id="titre">Livres</h1>
 	
 	<div>
-		<a href="catenfants.html"><img src="Images/livres/enfants.jpg" type="bouton" id="cat1"/></a>
-		<a href="bd.html"><img src="Images/livres/bd.jpg" type="bouton" id="cat2"/></a>
-		<a href="romans.html"><img src="Images/livres/romans.jpg" type="bouton" id="cat3"/></a>
+
+		<a href="livres_enfant.php"><img src="Images/livres/enfants.jpg" type="bouton" id="cat1"/></a>
+		<a href="livres_bd.php"><img src="Images/livres/bd.jpg" type="bouton" id="cat2"/></a>
+		<a href="livres_roman.php"><img src="Images/livres/romans.jpg" type="bouton" id="cat3"/></a>
+
 	</div>	
 	
 	<div>

@@ -1,3 +1,4 @@
+
 <?php 
 	$user_name = "root";
 	$password = "";
@@ -142,7 +143,7 @@
 		
 	</div></a>
 	
-	<a href="basFemmes.php"><div id="bas">
+	<a href="basFemmes.php?tail=0&coul=0"><div id="bas">
 	
 		<h1>Bas</h1>
 		
@@ -203,4 +204,5 @@
 	 	</div>
 	</div>	
 </body> 
+
 </html> 

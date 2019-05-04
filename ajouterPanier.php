@@ -7,19 +7,25 @@
 
 	$dbh=mysqli_connect($server, $user_name, $password,$database);
 	
-	$sql = "SELECT COUNT(*),mail FROM personnes WHERE Connexion=1";
+
+	$sql = "SELECT COUNT(*),mail,statut FROM personnes WHERE Connexion=1";
+
 	
 	$result = mysqli_query($dbh,$sql); 
 	
 	$row = mysqli_fetch_assoc($result);
 	
-	if($row["COUNT(*)"]==0)
+
+	if($row["COUNT(*)"]==0 && $row["statut"]=='Ac')
+
 	{
 		$sql = "INSERT INTO panier VALUES  (NULL,'nc',$id_article)";
 	
 		$result = mysqli_query($dbh,$sql); 
 	}
-	else
+
+	elseif($row["COUNT(*)"]!=0 && $row["statut"]=='Ac')
+
 	{
 		$id_acheteur=$row["mail"];
 		
@@ -27,6 +33,12 @@
 	
 		$result = mysqli_query($dbh,$sql); 
 	}
+
+	else
+	{
+		echo "Vous n'avez pas le statut d'acheteur donc pas possible";
+	}
+
 	
 	$sql = "SELECT sous_cat,sexe FROM articles WHERE id=$id_article";
 	
@@ -49,17 +61,22 @@
 	{
 		if($row["sexe"]=='F')
 		{
-			include 'basFemmes.php';
+
+			include 'basFemmes.php';			
+
 		}
 		else
 		{
 			include 'basHommes.php';
 		}
 	}
-	elseif($row["sous_cat"]=="chaussures")
+
+	elseif($row["sous_cat"]=="Chaussures")
 	{
 		if($row["sexe"]=='F')
 		{
+			echo 1;
+
 			include 'chaussuresFemmes.php';
 		}
 		else

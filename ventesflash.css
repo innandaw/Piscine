@@ -1,0 +1,196 @@
+#header
+{
+	padding: 5px;
+	background-color: black;    
+	color: white;
+	height: 80px;
+}
+
+#logo 
+{ 
+	float: left;  
+	margin-left:40px;
+	margin-top:10px;
+}
+
+#barre
+{
+	float: left;
+	margin-left:270px;
+	margin-top:15px;
+}
+
+#logopanier
+{ 
+	float: left; 
+	margin-left: 260px;
+	margin-top: 13px;
+}
+
+#logoCompte ul li
+{ 
+	float: left; 
+	margin-left: 1125px;
+	margin-top: 1px;
+	position: absolute;
+	list-style: none;
+}
+
+#pann
+{
+	float: left;
+	font-family: Calibri;
+	font-size: 17px;
+	margin-left: 870px;
+	margin-top: 1px;
+	color:#3495DE;
+}
+
+#conn
+{
+	float: left;
+	font-family: Calibri;
+	font-size: 17px;
+	margin-left: 20px;
+	margin-top: 1px;
+	color:#3495DE;
+}
+
+#champ       
+{
+	width:300px; 
+	height:30px;
+}
+
+#bouton       
+{ 
+	background-image: url("Images/Menu/barreRecherche.png");
+	background-position: center;
+	box-shadow: none;
+	width:50px; 
+	height:33px;
+}
+
+#menu
+{
+	background-color: #3495DE;
+	height: 35px;
+}
+
+#cat
+{
+	margin-left: 30px;
+}
+
+#admin, #ventesFlash, #vendre
+{
+	margin-left: 200px;
+}
+
+h1
+{
+	font-family: 'Great Vibes', cursive;
+}
+
+#titre
+{
+	font-family: 'Great Vibes', cursive;
+	font-style: bold;
+	margin-left:40%;
+	font-size:50px;
+	color: #3495DE;
+}
+
+#infos
+{
+	float: left;
+	margin-left: 80px;
+	margin-top: 10px;
+	margin-bottom: 30px
+}
+
+#photo1
+{
+	float: left;
+	margin-top: 45px;
+	margin-left: 100px;
+	margin-bottom: 30px
+}
+
+#gauche
+{
+	float: left;
+	width: 500px;
+}
+
+#droite
+{
+	float:left;
+	margin-top:20px;
+	margin-left:60px;
+}
+
+#infos1
+{
+	font-size:15px;
+	text-align:justify;
+}
+
+#infos2
+{
+	font-size:18px;
+	text-align:justify;
+}
+
+.infos3
+{
+	margin-left:75px;
+}
+
+#suppr
+{
+	float:left;
+	margin-top:20px;
+}
+
+#footer
+{
+	margin-top:500px;
+	background-color: black;
+	color: #3495DE;
+	height:200px;
+	float: left;
+}
+
+#footer p 
+{
+	font-family: 'Yantramanav', sans-serif;
+	font-size: 16pt;
+}
+
+a
+{
+	color: #3495DE;
+}
+
+#col1, #col2, #col3, #col4
+{	
+	float: left;
+	margin-right: 80px;
+	margin-left: 80px;
+	font-family: 'Yantramanav', sans-serif;
+}
+
+#ligne
+{
+	float: right;
+	margin-left: 20px;
+	font-size: 12pt;
+	font-family: 'Yantramanav', sans-serif;
+	margin-top: 110px;
+}
+
+#lesproduits
+{
+   margin-left: 250px;
+}

@@ -1,3 +1,4 @@
+
 <?php
 
 	session_start();
@@ -53,13 +54,17 @@
 		echo "impossible";
 		exit;
 	}
-
-	include 'detail_article.php';
 	
-	//$sql = "INSERT INTO articles ('nom', 'description', 'categorie', 'sous_cat') VALUES('$nom', '$description', '$cat', '$sous_cat');";
+	for ($i = 1; $i <= $nb_tailles ; $i++)
+	{
+		$sql = "INSERT INTO articles VALUES(NULL, '$nom', '$fichier_nom', '$description', NULL, '$cat', NULL, NULL, '$sous_cat', NULL, '$sexe', NULL, '$j','$idVendeur');";
+		$result = mysqli_query($dbh,$sql);
+		$j = $j+1;
+	}
+	//$sql = "INSERT INTO articles ( nom, description, categorie, sous_cat, nb_tailles, id_vendeur ) VALUES('$nom', '$description', '$cat', '$sous_cat','$nb_tailles','$idVendeur');";
 	
 
-	/*if (!$result) 
+	if (!$result) 
 	{
 	   echo "Impossible d'ajouter l'article";
 	   exit;
@@ -67,8 +72,10 @@
 	else
 	{
 		echo "Article ajouté";
-	}*/
-		
+	}
+
+	include 'detail_article.php';		
 
 	$dbh = null;
+
 ?>

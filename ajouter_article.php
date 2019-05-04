@@ -1,3 +1,4 @@
+
 <?php 
 	$user_name = "root";
 	$password = "";
@@ -85,6 +86,8 @@
 					$currentImgConn.css('display', 'block');
 				}
 			}
+			
+			
 		});
 	</script>
 </head> 
@@ -216,4 +219,5 @@
 	</div>	
 	
 </body> 
+
 </html> 
