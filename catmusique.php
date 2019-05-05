@@ -1,3 +1,4 @@
+
 <!DOCTYPE html> 
 <head> 
 	<title>ECE Amazon</title> 
@@ -29,16 +30,7 @@
 
 	<?php include ("footer.php") ?>
 	
-<<<<<<< HEAD
-	<div>
-
-		<a href="musique_class.php"><img src="Images/musique/classic.jpg" type="bouton" id="cat1"/></a>
-		<a href="musique_com.php"><img src="Images/musique/commercial.jpg" type="bouton" id="cat2"/></a>
-		<a href="musique_rock.php"><img src="Images/musique/rock.jpg" type="bouton" id="cat3"/></a>
-
-	</div>	
-=======
->>>>>>> footer
 	
 </body> 
+
 </html> 

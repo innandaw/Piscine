@@ -52,3 +52,57 @@
 	margin-left: 900px;
 }
 
+#contain
+{
+	background-color: #D3D3D3;
+	padding-bottom: 10px;
+	margin-bottom: 20px;	
+}
+
+#column1, #column2, #column3
+{
+	margin: auto;
+
+}
+
+#contain h3
+{
+	font-family: 'Great Vibes', cursive;
+	font-size: 19pt;
+	margin-left: 20%;	
+
+}
+
+#contain h1
+{
+	padding-top: 10px;
+	text-align : center;
+	font-family: 'Great Vibes', cursive;
+	font-size: 45pt;
+	color: black
+}
+
+#contain p
+{
+	text-align : center;
+	font-family: 'Yantramanav', sans-serif;
+	font-size: 16pt;
+}
+
+
+#contain h2
+{
+	margin-top: 70px;
+	text-align : center;
+	font-family: 'Yantramanav', sans-serif;
+	font-size: 20pt;
+}
+
+#contain td
+{
+	padding-left: 53px;
+	font-family: 'Yantramanav', sans-serif;
+	font-size: 16pt;
+	margin-left: 900px;
+}
+

@@ -1,3 +1,4 @@
+
 <?php
             
     session_start();
@@ -23,12 +24,6 @@
 	 
 	}
 
-<<<<<<< HEAD
-
 include 'confirmation_commande1.php'; 
-
-=======
-include 'confirmation_commande1.php'; 
->>>>>>> footer
 ?>
 

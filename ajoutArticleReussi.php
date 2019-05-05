@@ -1,3 +1,4 @@
+
 <!DOCTYPE html> 
 <head> 
 	<title>ECE Amazon</title> 
@@ -22,4 +23,5 @@
 	
 	<?php include ("footer.php") ?>
 </body> 
+
 </html>

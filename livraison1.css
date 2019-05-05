@@ -37,3 +37,42 @@
     padding-right:80px;
     margin-bottom: 30px;
 }
+#contain
+{
+	overflow: hidden;
+	margin-bottom: 70px;
+	margin-top: 40px;
+}
+
+#recap_commande
+{
+    border-style: dotted;
+    border-width: 10px;
+    border-color: #3495DE;
+    float: left;
+    height: 600px;
+    margin-left:90px;
+    width:550px;
+
+}
+
+#form_livr
+{
+    margin-left: 100px;
+   float: left;
+}
+#form_livr td
+{
+    font-size: 20px;
+    
+}
+
+#moy_livr
+{
+    border-style: dotted;
+    border-color: #3495DE;
+    border-width: 10px;
+    padding: 25px;
+    padding-right:80px;
+    margin-bottom: 30px;
+}

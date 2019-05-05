@@ -1,3 +1,4 @@
+
 <?php
 	$user_name = "root";
 	$password = "";
@@ -7,37 +8,19 @@
 
 	$dbh=mysqli_connect($server, $user_name, $password,$database);
 	
-<<<<<<< HEAD
-
 	$sql = "SELECT COUNT(*),mail,statut FROM personnes WHERE Connexion=1";
-
-=======
-	$sql = "SELECT COUNT(*),mail,statut FROM personnes WHERE Connexion=1";
->>>>>>> footer
 	
 	$result = mysqli_query($dbh,$sql); 
 	
 	$row = mysqli_fetch_assoc($result);
 	
-<<<<<<< HEAD
-
 	if($row["COUNT(*)"]==0 && $row["statut"]=='Ac')
-
-=======
-	if($row["COUNT(*)"]==0 && $row["statut"]=='Ac')
->>>>>>> footer
 	{
 		$sql = "INSERT INTO panier VALUES  (NULL,'nc',$id_article)";
 	
 		$result = mysqli_query($dbh,$sql); 
 	}
-<<<<<<< HEAD
-
 	elseif($row["COUNT(*)"]!=0 && $row["statut"]=='Ac')
-
-=======
-	elseif($row["COUNT(*)"]!=0 && $row["statut"]=='Ac')
->>>>>>> footer
 	{
 		$id_acheteur=$row["mail"];
 		
@@ -45,18 +28,10 @@
 	
 		$result = mysqli_query($dbh,$sql); 
 	}
-<<<<<<< HEAD
-
-=======
->>>>>>> footer
 	else
 	{
 		echo "Vous n'avez pas le statut d'acheteur donc pas possible";
 	}
-<<<<<<< HEAD
-
-=======
->>>>>>> footer
 	
 	$sql = "SELECT sous_cat,sexe FROM articles WHERE id=$id_article";
 	
@@ -79,32 +54,18 @@
 	{
 		if($row["sexe"]=='F')
 		{
-<<<<<<< HEAD
-
 			include 'basFemmes.php';			
-
-=======
-			include 'basFemmes.php';			
->>>>>>> footer
 		}
 		else
 		{
 			include 'basHommes.php';
 		}
 	}
-<<<<<<< HEAD
-
-=======
->>>>>>> footer
 	elseif($row["sous_cat"]=="Chaussures")
 	{
 		if($row["sexe"]=='F')
 		{
 			echo 1;
-<<<<<<< HEAD
-
-=======
->>>>>>> footer
 			include 'chaussuresFemmes.php';
 		}
 		else
@@ -150,4 +111,5 @@
 	}
 	
 	
+
 ?>

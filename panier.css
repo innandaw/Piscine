@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 h1
 {
 	margin-left : 40%;
@@ -11,7 +11,7 @@ h1
 	float : right;
 
 }
-=======
+
 #total
 {
 	float : left;
@@ -32,4 +32,24 @@ h1
 	margin-right: 100px;
 }
 
->>>>>>> footer
+
+#total
+{
+	float : left;
+	margin-left: 1200px;
+	margin-top: 30px;
+}
+
+#contain
+{
+	overflow: hidden;
+	margin-bottom: 30px;
+    font-family: 'Yantramanav', sans-serif;
+}
+
+.infos3
+{
+	margin-top: 20px;
+	margin-right: 100px;
+}
+

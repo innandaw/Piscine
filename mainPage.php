@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php 
 	$user_name = "root";
 	$password = "";
@@ -422,5 +422,7 @@
 </body> 
 
 
+
 </html> 
->>>>>>> footer
+
+
