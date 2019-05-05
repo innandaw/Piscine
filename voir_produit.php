@@ -1,7 +1,6 @@
-
 <?php 
 	$user_name = "root";
-	$password = "";
+	$password = "root";
 	$database = "eceamazon";
 	$server = "localhost";
 	
@@ -48,7 +47,7 @@
 <head> 
 	<title>ECE Amazon</title> 
 	<meta charset="utf-8" /> 
-	<link href="gererArticle.css" rel="stylesheet" type="text/css"/> 
+	<link href="voir_produit.css" rel="stylesheet" type="text/css"/> 
 	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
 	
@@ -99,7 +98,7 @@
 		</div>
 		    
         <div id="barre">
-            <h1>Articles en vente</h1>  
+            <h1>Ma vitrine</h1>  
         </div> 
 		
 		<div id="logopanier">
@@ -118,12 +117,14 @@
 		<h1 id="pann">Mon panier</h1>
 		<a href="creerclient.php"><h1 id="conn">Connexion</h1></a>		
 	</div>
+    
+
 	
 	<div id="cadre">
 		<?php 
 	
 		$user_name = "root";
-		$password = "";
+		$password = "root";
 		$database = "eceamazon";
 		$server = "localhost";
 		
@@ -131,7 +132,7 @@
 		
 		$dbh=mysqli_connect($server, $user_name, $password,$database);
 		
-		$sql = "SELECT id,nom,description,prix,taille,photos,couleur FROM articles WHERE stock!=0 GROUP BY nom";
+		$sql = "SELECT id,nom,description,prix,taille,photos,couleur FROM articles WHERE id_vendeur='$id' GROUP BY nom";
 
 		$result = mysqli_query($dbh,$sql);
 		
@@ -167,16 +168,15 @@
 					</div>
 					<div id="droite">
 						<h2 class="infos3">'.$prix.' €</h2>
+                       </n></n></n>
 					</div>
 				</div>';
-	
-			echo '<a href ="supprArticle.php?idArticle='.$id.'&chemin=1"><div id="decon"><input type="button" id="deconnecte" width="42px" height="45px"></div></a>';
-		
+			
 		}
 		
-	mysqli_free_result($result);
-	
-	$dbh=null;?>
+        mysqli_free_result($result);
+
+        $dbh=null;?>
 		
 		<div id="tot">
 			Total des produits à la vente : <?php echo $total?>
@@ -220,5 +220,4 @@
 	</div>	
 	
 </body> 
-
 </html> 
