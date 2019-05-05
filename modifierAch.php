@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <?php
 	$user_name = "root";
 	$password = "";
@@ -286,7 +286,7 @@
 	 	</div>
 	</div>	
 </body> 
-=======
+
 <?php
 	$user_name = "root";
 	$password = "";
@@ -463,5 +463,4 @@
 	<?php include ("footer.php") ?>
 	
 </body> 
->>>>>>> footer
 </html>
