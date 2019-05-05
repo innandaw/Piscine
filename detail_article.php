@@ -132,6 +132,7 @@
 	                <td>
 	                	<select name="taille" type="number">
 					        <option value="Taille">
+							<option value="TU">TU</option>
 					        <option value="34">34</option>
 					        <option value="36">36</option>
 					        <option value="38">38</option>
@@ -177,6 +178,7 @@
 	                <td>
 	                	<select name="taille2" type="number">
 					        <option value="Taille">
+							<option value="TU">TU</option>
 					        <option value="34">34</option>
 					        <option value="36">36</option>
 					        <option value="38">38</option>
@@ -222,6 +224,7 @@
 	                <td>
 	                	<select name="taille3" type="number">
 					        <option value="Taille">
+							<option value="TU">TU</option>
 					        <option value="34">34</option>
 					        <option value="36">36</option>
 					        <option value="38">38</option>
@@ -267,6 +270,7 @@
 	                <td>
 	                	<select name="taille4" type="number">
 					        <option value="Taille">
+					        <option value="TU">TU</option>
 					        <option value="34">34</option>
 					        <option value="36">36</option>
 					        <option value="38">38</option>

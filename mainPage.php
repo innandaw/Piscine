@@ -42,49 +42,14 @@
 <!DOCTYPE html> 
 <head> 
 	<title>ECE Amazon</title> 
-	<meta charset="utf-8" /> 
-	<link href="mainPage.css" rel="stylesheet" type="text/css"/> 
-	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="navbar.css" type="text/css"/>
+	<link rel="stylesheet" href="mainPage1.css" type="text/css"/>  
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
-		
-		var $indexImgConn = 0;
-		var $logoCompte = $('#logoCompte');
-		var $imgConn = $('#logoCompte img');
-
-		if('<?php echo $conn; ?>'==0)
-		{		
-			
-			var $currentImgConn = $imgConn.eq(0); //image courante
-			$imgConn.css('display', 'none');
-			$currentImgConn.css('display', 'block');
-		}
-		else
-		{
-			
-			if('<?php echo $statut; ?>'=='Ac')
-			{
-				var $currentImgConn = $imgConn.eq(1); //image courante
-				$imgConn.css('display', 'none');
-				$currentImgConn.css('display', 'block');
-			}
-			else if('<?php echo $statut; ?>'=='V')
-			{
-				var $currentImgConn = $imgConn.eq(2); //image courante
-				$imgConn.css('display', 'none');
-				$currentImgConn.css('display', 'block');
-			}
-			else
-			{
-				var $currentImgConn = $imgConn.eq(3); //image courante
-				$imgConn.css('display', 'none');
-				$currentImgConn.css('display', 'block');
-			}
-		}
-		
+				
 		var $carrousel = $('#carrousel');
 		var $img = $('#carrousel img');
 		var $indexImg = $img.length - 1;
@@ -152,49 +117,21 @@
 </head> 
  
 <body>
-	<div id="header">
-		<div id="logo">
-			<a href="mainPage.php"><img src="Images/Menu/logo.png" width="140" height="60"/></a>  
-		</div>
-		    
-        <form id="barre">
-            <input id="champ" type="text" value="Rechercher..."/>
-            <input id="bouton" type="button"/>   
-        </form> 
-		
-		<div id="logopanier">
-			<img src="Images/Menu/panier.png" width="50" height="40"/>   
-		</div>
-		
-		<div id="logoCompte">
-			<ul>
-				<li><a href="creerclient.php"><img src="Images/Menu/compte.png" width="50" height="40"/></a></li>   			 
-				<li><a href="monCompteAch.php"><img src="Images/Menu/compteConn.png" width="50" height="40"/></a></li>
-				<li><a href="monCompteVen.php"><img src="Images/Menu/compteConn.png" width="50" height="40"/></a></li>
-				<li><a href="monCompteAdmin.php"><img src="Images/Menu/compteConnAdmin.png" width="50" height="40"/></a></li>
-			</ul>
-		</div>
-		
-		<h1 id="pann">Mon panier</h1>
-		<a href="creerclient.php"><h1 id="conn">Connexion</h1></a>
-		
-	</div>
-	<div id="menu">
-		<a href="categories.php"><img src="Images/Menu/categories.png" width="140" height="25" id="cat"/></a>
-		<img src="Images/Menu/admin.png" width="140" height="25" id="admin"/>
-		<img src="Images/Menu/ventesFlash.png" width="140" height="25" id="ventesFlash"/>
-		<a href="ajouter_article.php"><img src="Images/Menu/vendre.png" width="140" height="25" id="vendre"/></a>
-	</div>
 
+	<?php include ("navbar.php") ?>
+
+	<div id="contain">
 	<h1 id="titre">Ventes Flash</h1>
 	<div id="carrousel">
 		<ul>
-			<li><img src="Images/Ventes1.jpg" width="1260" height="350"></li>
-			<li><img src="Images/Vente2.jpg" width="1260" height="350"></li>
+			<li><img src="Images/Ventes1.jpg" width="1500" height="400"></li>
+			<li><img src="Images/Vente2.jpg" width="1500" height="400"></li>
 		</ul>
-		<input type="button" value="Précédent" class="prev">
-		<input type="button" value="Suivant" class="next">
+		<a value="Précédent" class="prev">&#10094;</a>
+		<a value="Suivant" class="next">&#10095;</a>
 	</div>
+
+	
 	
 	<div>
 		<h1 id="t1">Vêtements</h1>
@@ -209,40 +146,13 @@
 		<a href="catlivres.php"><img src="Images/bookcat.jpg" type="bouton" id="cat3"/></a>
 		<a href="catmusique.php"><img src="Images/musiccat.jpg" type="bouton" id="cat4"/></a>
 	</div>
+</div>
 
-	<div id="footer">
-		<div id="col1">
-			<p>Pour mieux nous connaitre</p>
-		 	<a href="apropos.html">A propos d'ECE Amazon</a><br/>
-		 	<a href="ECE.html">ECE Amazon et notre planète</a><br/>
-		 	<a href="Equipe.html">Notre équipe</a>
-		</div>
 
-		<div id="col2">
-		 	<p>Catégories</p>
-		 	<a href="catvetements.php">Vêtements</a><br/>
-		 	<a href="catsport.php">Sport et loisirs</a><br/>
-		 	<a href="catlivres.php">Livres</a><br/>
-		 	<a href="catmusique.php">Musique</a>
-	 	</div>
 
-	 	<div id="col3">
-		 	<p>Besoins d'aide?</p>
-		 	<a href="commandes.html">Voir ou suivre vos commandes</a><br/>
-		 	<a href="livraison.html">Tarif et option de livraison</a><br/>
-		 	<a href="prime.html">Amazon Prime</a><br/>
-		 	<a href="retours.html">Retours</a>
-	 	</div>
-
-		<div id="col4">
-	 		<p>FAQ</p>
-	 	</div>
-
-	 	<div id="ligne">
-	 		<a href="contact.html">Contact</a>
-	 		<a href="mention.html">Mentions légales</a>
-	 	</div>
-	</div>	
+	<?php include("footer.php"); ?>
 	
 </body> 
+
+
 </html> 

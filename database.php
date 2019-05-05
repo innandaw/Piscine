@@ -13,7 +13,6 @@
 	//$sql = "INSERT INTO personnes (nom,prenom,mail,mdp,adresse,ville,CP,pays,tel,type_carte,numero_carte,nom_carte,cvv) VALUES('$nom', '$prenom', '$mail','$mdp','$adresse','$ville','$CP', '$pays','$tel','$typeCarte','$numCarte','$nomCarte','$cvv');";
 	
 	$result = mysqli_query($dbh,$sql);
-
 	
 	$row = mysqli_fetch_array($result);
 	

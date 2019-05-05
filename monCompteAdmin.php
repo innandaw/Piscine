@@ -2,24 +2,7 @@
 	$user_name = "root";
 	$password = "";
 	$database = "eceamazon";
-	$server = "localhost";
-	
-	/*$nom=isset($_POST["lastName"])?$_POST["lastName"]:"";
-	$prenom=isset($_POST["firstName"])?$_POST["firstName"]:"";
-	$dateNais=isset($_POST["date"])?$_POST["date"]:"";
-	$mail=isset($_POST["email"])?$_POST["email"]:"";
-	$mdp=isset($_POST["password"])?$_POST["password"]:"";
-	$adresse=isset($_POST["address"])?$_POST["address"]:"";
-	$ville=isset($_POST["city"])?$_POST["city"]:"";
-	$CP=isset($_POST["postalCode"])?$_POST["postalCode"]:"";
-	$pays=isset($_POST["country"])?$_POST["country"]:"";
-	$tel=isset($_POST["phone"])?$_POST["phone"]:"";
-	$typeCarte=isset($_POST["cardType"])?$_POST["cardType"]:"";
-	$numCarte=isset($_POST["nbCard"])?$_POST["nbCard"]:"";
-	$nomCarte=isset($_POST["nameCard"])?$_POST["nameCard"]:"";
-	$dateExp=isset($_POST["expDate"])?$_POST["expDate"]:"";
-	$cvv=isset($_POST["vvc"])?$_POST["vvc"]:"";*/
-	
+	$server = "localhost";	
 	
 	$dbh=mysqli_connect($server, $user_name, $password,$database);
 	
@@ -104,90 +87,14 @@
 
 	<meta charset="utf-8" /> 
 	<link href="monCompteAdmin.css" rel="stylesheet" type="text/css"/> 
-	
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function(){
-			var $indexImgConn = 0;
-			var $logoCompte = $('#logoCompte');
-			var $imgConn = $('#logoCompte img');
-			
-			if('<?php echo $conn; ?>'==0)
-			{		
-				var $currentImgConn = $imgConn.eq(0); //image courante
-				$imgConn.css('display', 'none');
-				$currentImgConn.css('display', 'block');
-			}
-			else
-			{
-				if('<?php echo $statut; ?>'=='Ac')
-				{
-					var $currentImgConn = $imgConn.eq(1); //image courante
-					$imgConn.css('display', 'none');
-					$currentImgConn.css('display', 'block');
-				}
-				else if('<?php echo $statut; ?>'=='V')
-				{
-					var $currentImgConn = $imgConn.eq(2); //image courante
-					$imgConn.css('display', 'none');
-					$currentImgConn.css('display', 'block');
-				}
-				else
-				{
-					var $currentImgConn = $imgConn.eq(3); //image courante
-					$imgConn.css('display', 'none');
-					$currentImgConn.css('display', 'block');
-				}
-
-			}
-		});
-	</script>
 </head> 
  
 <body>
-	<div id="header">
-		<div id="logo">
-			<a href="mainPage.php"><img src="Images/Menu/logo.png" id="Logo" width="140" height="60"/></a>  
-		</div>
-		    
-        <form id="barre">
-            <input id="champ" type="text" value="Rechercher..."/>
-            <input id="bouton" type="button"/>   
-        </form> 
-		
-		<div id="logopanier">
-			<img src="Images/Menu/panier.png" width="50" height="40"/>   
-		</div>
-		
-		<div id="logoCompte">
-			<ul>
-				<li><a href="creerclient.php"><img src="Images/Menu/compte.png" width="50" height="40"/></a></li>   
-				<li><a href="monCompteAch.php"><img src="Images/Menu/compteConn.png" width="50" height="40"/></a></li>
-				<li><a href="monCompteVen.php"><img src="Images/Menu/compteConn.png" width="50" height="40"/></a></li>
-				<li><a href="monCompteAdmin.php"><img src="Images/Menu/compteConnAdmin.png" width="50" height="40"/></a></li>
-			</ul>
-		</div>
-		
-		<h1 id="pann">Mon panier</h1>
-		<a href="creerclient.php"><h1 id="conn">Connexion</h1></a>		
-		
-	</div>
-	<div id="menu">
-		<a href="categories.php"><img src="Images/Menu/categories.png" width="140" height="25" id="cat"/></a>
-		<img src="Images/Menu/admin.png" width="140" height="25" id="admin"/>
-		<img src="Images/Menu/ventesFlash.png" width="140" height="25" id="ventesFlash"/>
-		<a href="ajouter_article.php"><img src="Images/Menu/vendre.png" width="140" height="25" id="vendre"/></a>
-	</div>
+	<?php include ("navbar.php") ?>
 	
-	<div id="titre"><h1>Profil Administrateur</h1></div>
-	
-	<a href="modifierAch.php"><div id="modif">
-		<h2 id="contenu">Modifier mes informations</h2>
-		<img src="Images/CompteAcheteur/modif.png" width="45" height="45" id="cray"/>
-	</div></a>
-	
-	<br><br><br><br>
-	<br><br><br><br>
+	<div id="contain">
+
+	<div id="titre">Profil Administrateur</div>
 
 	
 	<div id="infosBase">
@@ -195,43 +102,19 @@
 		<h2>Votre mail  <?php echo $mail;?></h2>
 	</div>
 	
-	<a href ="voirProduits.php"><div id="voirprod"><input type="button" value="Gérer les vendeurs" id="vente"></div></a>
-	<a href ="ajouter_article.php"><div id="ajoutprod"><input type="button" value="Gérer les articles" id="ajout"><br><br><br></div></a>
-	<a href ="connecte.php"><div id="decon"><input type="button" value="Déconnexion" id="deconnecte"></div></a>
+	<a href ="gererVendeur.php"><div id="voirprod"><input type="button" value="Gérer les vendeurs" id="vente"></div></a>
+	<a href ="gererArticle.php"><div id="ajoutprod"><input type="button" value="Gérer les articles" id="ajout"><br><br><br></div></a>
+	<a href ="connecte.php"><div id="decon"><input type="button" id="deconnecte"></div></a>
+
+	<a href="modifierAch.php"><div id="modif">
+		<h2 id="contenu">Modifier mes informations</h2>
+		<img src="Images/CompteAcheteur/modif.png" width="45" height="45" id="cray"/>
+	</div></a>
 
 	
-	<div id="footer">
-		<div id="col1">
-			<p>Pour mieux nous connaitre</p>
-		 	<a href="apropos.html">A propos d'ECE Amazon</a><br/>
-		 	<a href="ECE.html">ECE Amazon et notre planète</a><br/>
-		 	<a href="Equipe.html">Notre équipe</a>
-		</div>
+	</div>
 
-		<div id="col2">
-		 	<p>Catégories</p>
-		 	<a href="catvetements.php">Vêtements</a><br/>
-		 	<a href="catsport.php">Sport et loisirs</a><br/>
-		 	<a href="catlivres.php">Livres</a><br/>
-		 	<a href="catmusique.php">Musique</a>
-	 	</div>
-
-	 	<div id="col3">
-		 	<p>Besoins d'aide?</p>
-		 	<a href="commandes.html">Voir ou suivre vos commandes</a><br/>
-		 	<a href="livraison.html">Tarif et option de livraison</a><br/>
-		 	<a href="prime.html">Amazon Prime</a><br/>
-		 	<a href="retours.html">Retours</a>
-	 	</div>
-
-		<div id="col4">
-	 		<p>FAQ</p>
-	 	</div>
-
-	 	<div id="ligne">
-	 		<a href="contact.html">Contact</a>
-	 		<a href="mention.html">Mentions légales</a>
-	 	</div>
-	</div>	
+	
+	<?php include ("footer.php") ?>
 </body> 
 </html>

@@ -23,6 +23,6 @@
 	 
 	}
 
-include 'confirmation_commande.php'; 
+include 'confirmation_commande1.php'; 
 ?>
 

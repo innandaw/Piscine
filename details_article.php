@@ -30,11 +30,6 @@
 	$dbh=mysqli_connect($server, $user_name, $password, $database);
 
 	$nom = $_SESSION["nom"];
-/*
-	$nom = $_SESSION["j"];
-	echo $j;*/
-
-
 
 	$sql = "UPDATE articles SET prix='$prix1', taille='$taille1', couleur='$couleur1', stock='$stock1' WHERE nom LIKE '$nom' AND nb_tailles=1 ;";
 	$result = mysqli_query($dbh,$sql);
@@ -49,7 +44,7 @@
 	$result = mysqli_query($dbh,$sql);
 	
 
-	include 'mainPage.php';
+	include 'ajoutArticleReussi.php';
 
 		
 
