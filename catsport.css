@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 #header
 {
@@ -184,4 +185,54 @@ a
 	font-family: 'Yantramanav', sans-serif;
 	margin-top: 110px;
 
+=======
+#contain
+{
+	margin-bottom: 450px;
+}
+
+#t1
+{
+	color:black;
+	font-size:35px;
+	float:left;
+	margin-top:40px;
+	margin-left:170px;
+	margin-right: 130px;
+	font-family: 'Great Vibes', cursive;
+}
+
+#t2
+{
+	color:black;
+	font-size:35px;
+	float:left;
+	margin-top:40px;
+	margin-left:190px;
+	margin-right: 200px;
+	font-family: 'Great Vibes', cursive;
+}
+
+#t3
+{
+	color:black;
+	font-size:35px;
+	float:left;
+	margin-top:40px;
+	margin-left:170px;
+	margin-right: 130px;
+	font-family: 'Great Vibes', cursive;
+}
+
+
+#cat1, #cat2, #cat3
+{ 
+	float:left;
+	border-radius: 100%;
+	height: 200px;
+	width: 200px;
+	margin-left:160px;
+	margin-right: 130px;
+	margin-top: 50px;
+>>>>>>> footer
 }

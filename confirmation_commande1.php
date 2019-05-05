@@ -1,5 +1,9 @@
 <?php
+<<<<<<< HEAD
 
+=======
+    /*session_start();*/
+>>>>>>> footer
 	$user_name = "root";
 	$password = "";
 	$database = "eceamazon";
@@ -75,12 +79,54 @@
 	   $cvv=$row["cvv"];
 	   //echo "<br>";
 	}
+<<<<<<< HEAD
 	
 	mysqli_free_result($result);
 
 
 	$dbh = null;
 
+=======
+
+	mysqli_free_result($result);
+
+
+
+	$sql1 = "SELECT id_article FROM panier WHERE id_acheteur='$mail'";
+	$result1 = mysqli_query($dbh,$sql1);
+
+
+	while ($row1 = mysqli_fetch_assoc($result1)) 
+    {
+  
+        $id=$row1["id_article"];
+
+        $sql2 = "SELECT stock FROM articles where id=$id";
+        $result2 = mysqli_query($dbh,$sql2);
+        
+        while ($row2 = mysqli_fetch_assoc($result2))
+        {
+        $stock=$row2["stock"];
+
+
+        $stock=$stock-1;
+
+        $sql3 = "UPDATE articles set stock =$stock where id=$id";
+        $result3 = mysqli_query($dbh,$sql3);
+
+        }
+       
+    }
+
+    $sql4 = "DELETE FROM panier WHERE id_acheteur='$mail'";
+	$result4 = mysqli_query($dbh,$sql4);
+
+	$dbh = null;
+
+
+	$total=$_SESSION["total"];
+
+>>>>>>> footer
 ?>
 
 <!DOCTYPE html> 
@@ -91,6 +137,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
 
 	<meta charset="utf-8" /> 
+<<<<<<< HEAD
 	<link href="confirmation_commande1.css" rel="stylesheet" type="text/css"/> 
 </head> 
  
@@ -110,17 +157,33 @@
 		
 	</div>
     
+=======
+	<link href="confirmation_commande2.css" rel="stylesheet" type="text/css"/> 
+</head> 
+ 
+<body>
+	<?php include ("navbar.php") ?>
+    
+	<h1 id="titre">Félicitations</h1>
+	<div id="contain">
+
+>>>>>>> footer
 	<div id="recap_commande">
 	 
 	</div>
 	 
 	<div id="mess_confirmation">  
+<<<<<<< HEAD
 	    <h1 id="felicitations">Félicitations</h1>    
+=======
+	        
+>>>>>>> footer
 
 		<h2> Tu recevras ta commande d'ici</h2>
 
 		<?php   
 		 	if ($choix_livr=="dom")
+<<<<<<< HEAD
 		        echo'<center><div id="dom">3-5 jours ouvrés à ton domicile : '.$adresse.' '.$cp.' '.$ville.'</div><center>';
 			if ($choix_livr=="relai")
 		        echo'<center><div id="dom">2-3 jours ouvrés dans votre point relais</div><center>'; 
@@ -168,5 +231,36 @@
 	 		<a href="mention.html">Mentions légales</a>
 	 	</div>
 	</div>	
+=======
+            {
+                $total=$total+4;
+                echo'<center><div id="dom">3-5 jours ouvrés à ton domicile : '.$adresse.' '.$cp.' '.$ville.'</div><center>';
+            }
+		        
+			if ($choix_livr=="relai")
+            {
+                 $total=$total+2;
+		        echo'<center><div id="dom">2-3 jours ouvrés dans votre point relais</div><center>'; 
+            }
+               
+		 	if ($choix_livr=="prenium")
+            {
+                $total=$total+7;
+                 echo'<p><div id="dom">Sous 24h chez vous au '.$adresse.'</div></p>';  
+            }
+		       
+		    
+		 	echo '<p><div id="mail">Total de la commande : '.$total.'</div></p>';  
+		?>
+		   
+	</div>
+
+	<div id="SAV">
+		<p>Si les informations ci-dessus sont erronées, n’hésite pas à nous contacter <a href="mailto:inna.ndaw@wanadoo.fr?subject=Question sur ma commande&body=[Veuillez renseigner votre numéro de panier ici]"><br>S.A.V ECE Amazon</a></p>
+	</div>
+
+    </div>
+<?php include ("footer.php") ?>	
+>>>>>>> footer
 </body> 
 </html>

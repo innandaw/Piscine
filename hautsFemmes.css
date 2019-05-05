@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #header
 {
 	padding: 5px;
@@ -214,3 +215,111 @@ a
 	margin-top: 110px;
 
 }
+=======
+#contain
+{
+	overflow: hidden;
+}
+
+
+#infos
+{
+	float: left;
+	margin-left: 80px;
+	margin-top: 10px;
+	margin-bottom: 30px
+}
+
+#photo1
+{
+	float:left;
+	margin-left: 50px;
+	margin-top: 25px;
+	height: 170px;
+}
+
+#cadre1
+{
+	margin-top: 20px;
+	overflow:hidden;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+	background-color: #D3D3D3;
+}
+
+#gauche
+{
+	float:left;
+	margin-left:100px;
+	width: 550px;
+	height:200px;
+}
+
+#droite
+{
+	float:left;
+	margin-left:90px;
+	width:220px;
+	border-style: solid;
+	border-color: black;
+	border-width: 2px;
+	color:black;
+}
+
+#infos1
+{
+	font-size:15px;
+	text-align:justify;
+}
+
+#infos2
+{
+	font-size:18px;
+	text-align:justify;
+}
+
+.infos3
+{
+	margin-left:75px;
+}
+
+#infos5
+{
+	font-size:22px;
+	text-align:center;
+	margin-left:10px;
+}
+
+#suppr
+{
+	float:left;
+	margin-top:20px;
+}
+
+#siz, #col
+{
+	float:left;
+	font-size: 15pt;
+	height:15px;
+}
+
+#siz p, #col p
+{
+	color: black;
+	font-family: 'Yantramanav', sans-serif;
+	font-size:15px;
+	font-style: bold;
+}
+
+#sizes h3, #color h3
+{
+	float:left;
+	margin-left:5px;
+	margin-right:15px;
+	color: black;
+	font-family: 'Yantramanav', sans-serif;
+	font-size:15px;
+}
+
+>>>>>>> footer

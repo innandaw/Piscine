@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #header
 {
 	padding: 5px;
@@ -99,6 +100,12 @@ h1
 	margin-left:40%;
 	font-size:50px;
 	color: #3495DE;
+=======
+#contain
+{
+	overflow: hidden;
+	margin-bottom: 30px;
+>>>>>>> footer
 }
 
 #infos
@@ -152,6 +159,7 @@ h1
 	float:left;
 	margin-top:20px;
 }
+<<<<<<< HEAD
 
 #footer
 {
@@ -194,3 +202,5 @@ a
 {
    margin-left: 250px;
 }
+=======
+>>>>>>> footer

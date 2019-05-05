@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php 
 	$user_name = "root";
 	$password = "";
@@ -29,10 +30,13 @@
 	
 ?>
 
+=======
+>>>>>>> footer
 <!DOCTYPE html> 
 <head> 
 	<title>ECE Amazon</title> 
 	<meta charset="utf-8" /> 
+<<<<<<< HEAD
 	<link href="hautsFemmes.css" rel="stylesheet" type="text/css"/> 
 	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
@@ -59,12 +63,20 @@
 			}
 		});
 	</script>
+=======
+	<link href="hautsFemmes1.css" rel="stylesheet" type="text/css"/> 
+	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
+	
+
+>>>>>>> footer
 	<script type="text/javascript" src="main.js"></script>
 	
 
 </head> 
  
 <body>
+<<<<<<< HEAD
 	<div id="header">
 		<div id="logo">
 			<a href="mainPage.php"><img src="Images/Menu/logo.png" width="140" height="60"/></a>  
@@ -99,6 +111,16 @@
 
 	<h1 id="titre">Commerciale</h1>
 	
+=======
+
+	<?php include ("navbar.php") ?>
+
+	<h1 id="titre">Commerciale</h1>
+	
+	<div id="cadre1">
+	
+	
+>>>>>>> footer
 	<?php 
 	
 	$user_name = "root";
@@ -108,7 +130,11 @@
 	
 	$dbh=mysqli_connect($server, $user_name, $password,$database);
 	
+<<<<<<< HEAD
 	$sql = "SELECT nom,description,prix,taille,photos,couleur, id FROM articles WHERE categorie='Musique' AND sous_cat='musique_com' GROUP BY nom";
+=======
+	$sql = "SELECT nom,description,prix,taille,photos,couleur, id FROM articles WHERE categorie='Musique' AND sous_cat='commerciale' GROUP BY nom";
+>>>>>>> footer
 	
 	$result = mysqli_query($dbh,$sql);
 	
@@ -126,11 +152,16 @@
 		$nom=$row["nom"];
 		$description=$row["description"];
 		$prix=$row["prix"];
+<<<<<<< HEAD
 	    $taille=$row["taille"];
+=======
+	    $photos=$row["photos"];
+>>>>>>> footer
 	    $couleur=$row["couleur"];
 	    $img=$row["photos"];
 	    $id=$row["id"];
 
+<<<<<<< HEAD
 	    
         // on renomme le fichier, chemin d'acces
         $img1 = $fichier_dossier.$img;
@@ -156,11 +187,45 @@
 		
 	}
 	
+=======
+        // on renomme le fichier, chemin d'acces
+        $img1 = $fichier_dossier.$img;
+		
+		echo '<div id="cadre1">
+			<img src="'.$img1.'" width="130" height="170" id="photo1"/>';
+			
+			if($statut=='Ad')
+			{
+				echo '<a href ="supprArticle.php?idArticle='.$id.'&chemin=0"><div id="suppr"><img src="Images/supprime.png" width="70" height="70"/></div></a>';
+			}
+			
+			echo '<div id="gauche">
+				<div id="'.$id.'">
+					<h2>'.$nom.'</h2>
+					<h3 id="infos1">'.$description.'</h3>';
+						
+					$sql1 = "SELECT taille FROM articles WHERE nom='$nom' AND stock!=0 GROUP BY taille";
+				
+					$result1 = mysqli_query($dbh,$sql1);
+				echo'</div>
+			</div>
+				
+			<a href="ajouterPanier.php?ident='.$id.'"><div id="droite">
+				<h2 class="infos3">'.$prix.' €</h2>
+				<img src="Images/panier.png" width="70" height="70" class="infos3"/>
+
+				<h2 id="infos5">Ajouter à mon panier</h2>
+			</div></a>
+		</div>';
+	}
+		
+>>>>>>> footer
 	mysqli_free_result($result);
 	
 	$dbh=null;?>
 
 
+<<<<<<< HEAD
 	<div id="footer">
 		<div id="col1">
 			<p>Pour mieux nous connaitre</p>
@@ -194,6 +259,11 @@
 	 		<a href="mention.html">Mentions légales</a>
 	 	</div>
 	</div>	
+=======
+	</div>
+
+	<?php include("footer.php"); ?>
+>>>>>>> footer
 	
 </body> 
 </html> 

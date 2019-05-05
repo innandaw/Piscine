@@ -46,9 +46,15 @@
 <!DOCTYPE html> 
 <head> 
 	<title>ECE Amazon</title> 
+<<<<<<< HEAD
 	<meta charset="utf-8" /> 
 	<link href="mainPage.css" rel="stylesheet" type="text/css"/> 
 	<link href="hautsFemmes.css" rel="stylesheet" type="text/css"/>
+=======
+	<meta charset="utf-8" />
+	<link href="panier1.css" rel="stylesheet" type="text/css"/> 
+	<link href="hautsFemmes1.css" rel="stylesheet" type="text/css"/>
+>>>>>>> footer
 	<link href="https://fonts.googleapis.com/css?family=Yantramanav" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet">
 	
@@ -56,6 +62,7 @@
 </head> 
  
 <body>
+<<<<<<< HEAD
 	<div id="header">
 		<div id="logo">
 			<a href="mainPage.php"><img src="Images/Menu/logo.png" id="Logo" width="140" height="60"/></a>  
@@ -85,6 +92,13 @@
 
 	
 	<h1 id=titre>Mon Panier</h1>
+=======
+	<?php include('navbar.php')?>
+
+	<div id="contain">
+	
+	<h1 id="titre">Mon Panier</h1>
+>>>>>>> footer
 
 
 		<!-- <div id=total>
@@ -95,7 +109,11 @@
 		</div> -->
 
 	<?php 
+<<<<<<< HEAD
 	
+=======
+	/*session_start();*/
+>>>>>>> footer
 	$user_name = "root";
 	$password = "";
 	$database = "eceamazon";
@@ -123,11 +141,18 @@
 	{
 		$id=$row1["id_article"];
 		
+<<<<<<< HEAD
 		$sql = "SELECT nom,description,prix,taille, photos,couleur FROM articles WHERE id=$id";
 
 		$result = mysqli_query($dbh,$sql);
 
 		
+=======
+		$sql = "SELECT nom,description,prix,taille, photos,couleur,categorie FROM articles WHERE id=$id";
+
+		$result = mysqli_query($dbh,$sql);
+
+>>>>>>> footer
 		if (!$result) 
 		{
 			echo "Impossible d'exécuter la requête ($sql) dans la base";
@@ -147,12 +172,17 @@
 		$nb=$nb+1;
 		$taille=$row["taille"];
 		$couleur=$row["couleur"];
+<<<<<<< HEAD
+=======
+		$cat=$row["categorie"];
+>>>>>>> footer
 		
 		$total=$total+$prix;
 
 			// on renomme le fichier, chemin d'acces
 			$img1 = $fichier_dossier.$img;
 			
+<<<<<<< HEAD
 			echo '<div>';
 				echo '<div id="photo1"><img src="'.$img1.'" width="130" height="170"/></div>';
 				
@@ -185,6 +215,57 @@
 	}
 
 	echo '<br><br><br><br><br><br><br><br><br><br><br><br><div id="total">
+=======
+			echo '<div id="cadre1">
+				<img src="'.$img1.'" width="130" height="170" id="photo1"/>';
+				
+
+				echo '<a href ="supprArticlePan.php?idArticle='.$id.'&chemin=2"><div id="suppr"><img src="Images/supprime.png" width="70" height="70"/></div></a>';
+				
+				
+				echo '<div id="gauche">
+					<div id="'.$id.'">
+						<h2>'.$nom.'</h2>
+						<h3 id="infos1">'.$description.'</h3>';
+							
+						if($cat=="Vetements")
+						{								
+							echo'<div id="siz"><p>Tailles : <p></div>';
+							echo '<div id="sizes"><h3 class="infos2"> '.$taille.'</h3></div>';				
+							
+							if(isset($_GET["tail"]))
+							{
+								$taille=$_GET["tail"];
+							}
+							else
+							{
+								$taille=0;
+							}
+						}
+						
+							
+						if($cat!="Livres" || $cat!="Musique")
+						{				
+							echo'<div id="col"><p>Couleur : <p></div>';
+							echo '<div id="color"><h3 class="infos2">'.$couleur.'</h3></div>';				
+								
+							if(isset($_GET["coul"]))
+							{
+								$couleur=$_GET["coul"];
+							}
+							else
+							{
+								$couleur=0;
+							}
+						}			
+					echo'</div>
+				</div>
+			</div>';
+		
+	}
+	$_SESSION["total"]=$total;
+	echo '<div id="total">
+>>>>>>> footer
 				<h2>Nombre d\'articles: '.$nb.'</h2>
 				<h2>Prix total: '.$total.'</h2>
 				<a href="valider_panier.php?ident='.$id.'"><img src="Images/valider_panier.png"class="infos3"/></a>
@@ -193,6 +274,7 @@
 	mysqli_free_result($result);
 	
 	$dbh=null;?>
+<<<<<<< HEAD
 
 
 
@@ -231,5 +313,11 @@
 	 	</div>
 	</div>	
 	
+=======
+</div>
+
+	<?php include('footer.php')?>
+
+>>>>>>> footer
 </body> 
 </html> 
